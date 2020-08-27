@@ -1,0 +1,18 @@
+{
+  "dir": "rtl",
+
+  "signIn" :"تسجيل الدخول",
+  "emailAddress": "البريد الالكتروني",
+  "emailRequired": "يجب إدخال البريد الالكتروني",
+  "emailMustValid": "يجب ان يكون البريد الالكتروني صحيحا",
+  "password": "كلمة المرور",
+  "passwordRequired": "يجب ادخال كلمة المرور",
+  "passwordCharacters": "يجب الا تقل كلمة المرور عن ثمانية احرف",
+  "forgotPassword": "هل نسيت كلمة المرور؟",
+  "or": "أو",
+  "registerNow": "سجل الان",
+  "newMember": "عضو جديد؟",
+  "emailParagraphTextForgetPassword": "ادخل بريدك الالكتروني وسوف نقوم بارسال رابط لاعادة تعيين كلمةالمرور",
+  "enterEmail": "البريد الالكتروني",
+  "sendEmail": "إرسال البريد"
+}

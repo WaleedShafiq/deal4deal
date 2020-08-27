@@ -1,0 +1,60 @@
+@import 'layout';
+.customFormWidth {
+    width: 270px;
+    div.forgetPasswordDiv {
+        display: flex;
+        justify-content: flex-end;
+        a {
+            text-decoration: underline;
+            cursor: pointer;
+            color: $grayColor;
+        }
+        a:hover {
+            color: $redColor;
+        }
+    }
+}
+
+
+/* forget password dialog*/
+
+button.close {
+    position: absolute;
+    right: -5px;
+    top: -25px;
+    font-size: 15px;
+    opacity: 1;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+button.close:focus {
+    outline: 0;
+}
+
+.loginContainer:after,
+.loginContainer:before {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid $whiteColor;
+    top: -15px;
+    content: "";
+    left: 88%;
+    margin-left: -15px;
+    position: absolute;
+    transform: rotate(180deg);
+}
+
+
+/* Styling for second triangle (border) */
+
+.loginContainer:before {
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-top: 16px solid;
+    border-top-color: inherit;
+    /* Can't be included in the shorthand to work */
+    top: -16px;
+    margin-left: -16px;
+    transform: rotate(180deg);
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 84 84">
+    <defs>
+        <style>
+            .cls-1{fill:#4ad1c7}.cls-2{fill:#fff}.cls-3{filter:url(#Ellipse_12)}
+        </style>
+        <filter id="Ellipse_12" width="84" height="84" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="6"/>
+            <feGaussianBlur result="blur" stdDeviation="6"/>
+            <feFlood flood-color="#76d3d3" flood-opacity=".396"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g id="icon" transform="translate(-7 -178)">
+        <g class="cls-3" transform="translate(7 178)">
+            <circle id="Ellipse_12-2" cx="24" cy="24" r="24" class="cls-1" data-name="Ellipse 12" transform="translate(18 12)"/>
+        </g>
+        <g id="_001-location-pin" data-name="001-location-pin" transform="translate(39.868 201.402)">
+            <path id="Path_44" d="M102.922 97.057a3.795 3.795 0 1 0-3.795 3.8 3.8 3.8 0 0 0 3.795-3.8zm-3.795 2.377a2.377 2.377 0 1 1 2.377-2.377 2.38 2.38 0 0 1-2.377 2.377zm0 0" class="cls-2" data-name="Path 44" transform="translate(-90.827 -88.854)"/>
+            <path id="Path_45" d="M15.1 13.163l.506-.916v-.006A8.3 8.3 0 1 0 1 12.245L7.264 23.58a1.184 1.184 0 0 0 2.071 0l.99-1.79a5.518 5.518 0 1 0 4.775-8.627zm-5.522 7.048L8.3 22.523 2.243 11.568a6.882 6.882 0 1 1 12.117 0l-1 1.807a5.521 5.521 0 0 0-3.782 6.84zm5.3 2.567a4.1 4.1 0 1 1 4.1-4.1 4.106 4.106 0 0 1-4.098 4.1zm0 0" class="cls-2" data-name="Path 45"/>
+            <path id="Path_46" d="M265.558 355l-1.9 1.9-.7-.7a.709.709 0 1 0-1 1l1.2 1.2a.714.714 0 0 0 1 0l2.4-2.4a.709.709 0 0 0-1-1zm0 0" class="cls-2" data-name="Path 46" transform="translate(-249.376 -338.023)"/>
+        </g>
+    </g>
+</svg>

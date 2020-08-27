@@ -1,0 +1,56 @@
+{
+  "dir": "rtl",
+
+  "registeration": "التسجيل",
+  "register": "سجل",
+  "valid": "متاح",
+
+  "firstName": "الاسم الاول",
+  "firstNamRequired": "يجب ادخال الاسم الاول",
+  "firstNameLength": "يجب الا يقل الاسم عن أربعة حروف",
+
+  "lastName": "اسم العائلة",
+  "lastNameRequired": "يجب ادخال الاسم الاخير",
+  "lastNameLength": "يجب الا يقل الاسم عن أربعة حروف",
+
+
+
+  "email": "البريد الالكتروني",
+  "emailRequired": "يجب إدخال البريد الإلكتروني",
+  "emailValidation": "يجب إدخال البريدالإلكتروني بطريقة صحيحة",
+
+
+  "countrycode": "رقم البلد",
+  "countrycodeRequired": "يجب اختيار البلد",
+
+  "phoneNumber": "رقم الموبايل",
+  "phoneNumberRequired": "يجب ادخال رقم الموبايل",
+  "invalidPhoneNumber": "رقم الهاتف غير صحيح",
+
+  "verifyNow": "تأكيد الآن",
+
+  "password": "الرقم السري",
+  "passwordRequired": "يجب تاكيد كلمة المرور",
+  "passwordCharacters": "كلمة المرور يجب الا تقل عن ثمانية حروف",
+
+  "confirmPassword": "تأكيد كلمة المرور",
+  "confirmPasswordRequired": "يجب إدخال تأكيد كلمة المرور",
+  "passswordConfirmPasswordMatch": "كلمة المرور وتأكيدها غير متطابقين",
+  "match": "متطابقين",
+
+
+  "invitationCode": "رقم الدعوة (إختياري)",
+  "invitationCodeValid": "رقم الدعوة غير صحيح",
+
+  "signingAggreement": "بالضغط علي زر الموافقة انت توافق علي كلا من: ",
+  "credentialAggreement": "موافقات المستخدم،",
+  "privacyPolicy": "سياسة الخصوصية",
+  "and": "و",
+  "drawTermConditions": "الشروط الموافقات",
+
+  "acceptConditionsRequired": "يجب المافقة علس سياسة الخصوصية",
+
+
+  "enterEmail": "البريد الالكتروني",
+  "emailAddress": "البريد الالكنروني"
+}

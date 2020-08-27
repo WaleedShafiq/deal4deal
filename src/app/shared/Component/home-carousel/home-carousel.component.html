@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 px-0">
+            <div id="topCarouselCampaginPage" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#topCarouselCampaginPage" data-slide-to="0" *ngFor="let li of allRows; let i = index" [attr.data-slide-to]="i" [ngClass]="i == 0 ? 'active':''"></li>
+                </ul>
+                <div class="carousel-inner">
+                    <div class="carousel-item" *ngFor="let slider of allRows; let i = index" [ngClass]="i == 0 ? 'carousel-item active':'carousel-item'">
+                        <img *ngIf="slider.slide_type === 'Image'" [src]="slider.file" class="img-fluid" alt="image">
+                        <iframe *ngIf="slider.slide_type === 'Video'" [src]='getSafeUrl(slider.file)' frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#topCarouselCampaginPage" data-slide="prev">
+                    <span>
+            <i class="fa fa-chevron-left"></i>
+          </span>
+                </a>
+                <a class="carousel-control-next" href="#topCarouselCampaginPage" data-slide="next">
+                    <span>
+            <i class="fa fa-chevron-right"></i>
+          </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

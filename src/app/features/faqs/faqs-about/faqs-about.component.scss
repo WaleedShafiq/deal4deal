@@ -1,0 +1,13 @@
+a {
+  text-decoration: underline;
+}
+
+.answer {
+  text-align: justify;
+}
+
+@media (max-width: 990px) {
+  .questionText{
+    width: 255px;
+  }
+}

@@ -1,0 +1,65 @@
+@import 'layout';
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+.card {
+    cursor: grab;
+    max-width: 300px;
+    margin: auto;
+    font-family: 'Oswald', sans-serif !important;
+    box-shadow: 0 3px 6px 0 rgba(35, 31, 32, 0.16);
+    .containerImageProduct {
+        display: flex;
+        justify-content: center;
+        img {
+            width: 75%;
+            height: 150px;
+            max-width: 400px
+        }
+    }
+    .spanForNewProduct {
+        width: 50px;
+        position: absolute;
+        left: -10px;
+        top: 20px;
+    }
+    .containerOfProgressAndQuantity {
+        p.soldOutContainer {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .containerOfPrice {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        i {
+            font-size: 20px;
+        }
+    }
+    .containerButtons {
+        display: flex;
+        justify-content: space-between;
+        button {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            font-family: 'Oswald', sans-serif !important;
+        }
+        button:hover {
+          animation: .9s customAnimation;
+        }
+    }
+    h5.productName {
+      color: #231f20;
+    }
+}
+
+// shared socail icon button close
+button.close:focus {
+    box-shadow: none;
+    outline: 0;
+}
+
+button.buttonHeart:hover {
+    i {
+        animation: .9s customAnimation;
+    }
+}
+

@@ -1,0 +1,64 @@
+@import 'layout';
+.containerForAllfoter {
+    border-top: 1px solid #e4e4e4
+}
+
+i {
+    width: 19px;
+}
+
+a.border-dark {
+    border-color: $blackColor!important;
+}
+
+a {
+    color: #000;
+    border: 1px solid #000;
+    padding: 1px 7px;
+}
+
+a.twitter:hover {
+    background-color: #38A1F3;
+    color: #FFF;
+    border: 1px solid #38A1F3;
+    i {
+        animation: .9s customAnimation;
+    }
+}
+
+a.facebook:hover {
+    background-color: #ffffff;
+    color: #4267b2;
+    border: 1px solid #ffffff;
+    i {
+        animation: .9s customAnimation;
+    }
+}
+
+a.instgram:hover {
+    color: #fff;
+    border: 1px solid #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    i {
+        animation: .9s customAnimation;
+    }
+}
+
+a.youtube:hover {
+    background-color: #FFF;
+    color: #ED3833;
+    border: 1px solid #FFF;
+    i {
+        animation: .9s customAnimation;
+    }
+}
+
+@media (max-width: 990px) {
+    .socialIcons,
+    .copyRight {
+        text-align: center !important;
+    }
+    .socialIcons {
+        padding-top: 6px;
+    }
+}

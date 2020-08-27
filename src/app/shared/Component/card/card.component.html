@@ -1,0 +1,112 @@
+
+
+<div class="mt-2 pb-2 rounded  card" [ngStyle]="campagin.status === 'sold out' ? {'filter': 'brightness(0.7)', 'background-color':'#bfbfbf'}:
+{'filter': 'brightness(1)', 'background-color':'#FFF'}">
+
+  <div class="p-2 containerImageProduct" [ngStyle]="{'background-color': campagin.status === 'sold out' ? 'none' :'#e2e8ed'}">
+    <img [src]="baseURL + campagin.image" alt="img" class="img-fluid">
+  </div>
+  <span class="text-center text-light bg-warning spanForNewProduct" *ngIf="campagin.status === 'Open'">
+    {{'new' | translate}}
+  </span>
+
+  <div class="containerOfProgressAndQuantity">
+    <div class="py-2 containerSold" [ngStyle]="{'background-color': campagin.status === 'sold out' ? 'none' :'rgba(246, 245, 241, 0.43)'}">
+      <p class="soldOutContainer">
+        <span class="font-weight-bold">{{campagin.sold}}</span>
+        <span class="text-muted mx-1 font-weight-bold">
+          {{'SoldOutOf' | translate}}
+        </span>
+        <span class="font-weight-bold">{{campagin.total_num_of_sells}}</span>
+      </p>
+      <div class="progress mb-2" >
+        <div [ngStyle]="{'width': ((campagin.sold * 100) / campagin.total_num_of_sells ) + '%'}" class="progress-bar bg-danger closingProgress" *ngIf="campagin.status === 'Closing Soon'"></div>
+        <div [ngStyle]="{'width': ((campagin.sold * 100) / campagin.total_num_of_sells )  + '%'}" class="progress-bar bg-warning exploreProgress" *ngIf="campagin.status === 'Open'"></div>
+        <div [ngStyle]="{'width':  100 + '%'}"  class="progress-bar bg-muted soldProgress" *ngIf="campagin.status === 'sold out'"></div>
+      </div>
+    </div>
+    <div class="mt-3 px-3 font-weight-bold">
+      <h5 class="productName">{{campagin.product.name}}</h5>
+      <p class="mb-0 text-muted">
+        {{'getAChanceTo' | translate}}
+        <span  [ngStyle]="{'color': campagin.status === 'sold out' ? '#777' :'#EC2326'}">
+          {{'win' | translate}}
+        </span>
+      </p>
+      <p class="text-muted">{{campagin.prize.name}}</p>
+    </div>
+    <div class="containerOfPrice px-3" [ngStyle]="{direction: currentlanguage === 'en'? 'ltr': 'rtl'}">
+      <span class="font-weight-bold">
+        <span>{{campagin.product.price}} </span>
+        <span>{{currencyName}}</span>
+      </span>
+      <span>
+        <button class="btn  buttonHeart" [disabled]="campagin.status === 'sold out'">
+          <img *ngIf="routerUrl === '/whishlist'" src="assets/img/removeWhishlist.png"
+            (click)="removeCampaginTowhishlist(campagin)" alt="img" class="img-fluid">
+          <span *ngIf="routerUrl !== '/whishlist' && campagin.status !== 'sold out'">
+            <i (click)="addCampaginTowhishlist(campagin)"
+            [ngStyle]="IsWhished && IsWhished && selectedCampaignIdWishList === campagin.id ? {'color':'#EC2326'}:  {'color': '#adb5bd'}"
+              class="fas fa-heart"></i>
+          </span>
+          <span *ngIf="campagin.status == 'sold out' && routerUrl !== '/whishlist'">
+            <i [ngStyle]="{'color': '#000'}" class="fas fa-heart"></i>
+          </span>
+        </button>
+        <button class="btn buttonHeart" [disabled]="campagin.status === 'sold out'"
+          (click)="open(shareModal, campagin)">
+          <i [ngStyle]="{color: campagin.status === 'sold out' ? '#000': '#adb5bd'}" class="fas fa-share-alt"></i>
+        </button>
+      </span>
+    </div>
+
+
+    <div class="containerButtons mt-2 py-1 mx-2" *ngIf="campagin.status !== 'sold out'">
+      <button type="button" class=" btn btn-outline-danger border-0 px-4"
+        (click)="navigateToCampaginDetailsPage(campagin.id)">
+        {{'PrizeDetails' | translate}}
+      </button>
+      <button *ngIf="selectedCampaignIdCart && selectedCampaignIdCart === campagin.id" [ladda]="submitted " type="button" class="btn text-light" [disabled]="submitAddedToCartButton"
+              (click)="addCampaginToCart(campagin)" [style.background-color]="successAdded ? 'green': '#EC2326'">
+        <span *ngIf="!successAdded && selectedCampaignIdCart === campagin.id">{{'AddToCart' | translate}}</span>
+        <span *ngIf="successAdded && selectedCampaignIdCart === campagin.id"><span><i class="fas fa-check mx-1"></i></span>{{'AddSucces' | translate}}</span>
+      </button>
+      <button *ngIf="!selectedCampaignIdCart || ( selectedCampaignIdCart && selectedCampaignIdCart !== campagin.id)" [ladda]="submitted" type="button" class="btn text-light"
+              (click)="addCampaginToCart(campagin)" [style.background-color]="'#EC2326'">
+        <span>{{'AddToCart' | translate}}</span>
+      </button>
+    </div>
+    <div class="bg-customDark text-center rounded border-0 text-light py-3 mt-3 mx-2"
+      *ngIf="campagin.status === 'sold out'">
+      {{'DrawDataSoldOut' | translate}}
+
+    </div>
+  </div>
+
+
+</div>
+
+<ng-template #shareModal let-modal id="shareModalButtons">
+  <div class="modal-body shareModal">
+    <div class="p-3">
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <span>{{'share' | translate}}</span>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div>
+          <share-buttons [theme]="'circles-dark'" [include]="['facebook','twitter','linkedin', 'whatsapp','messenger']"
+            [show]="5" [showText]="true" [size]="-1" [url]="urlShare"></share-buttons>
+        </div>
+      </div>
+      <div class="row justify-content-between px-4">
+        <input type="text" class="col-8" style="border: none" [value]="urlShare" readonly>
+        <share-buttons [theme]="'circles-dark'" id="CopyButton" [include]="['copy']" [show]="1" [showText]="true"
+          [size]="-1" [url]="urlShare">
+        </share-buttons>
+      </div>
+    </div>
+  </div>
+</ng-template>

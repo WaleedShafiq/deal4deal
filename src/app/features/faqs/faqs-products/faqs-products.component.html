@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row justify-content-between align-items-center p-3"
+  [ngStyle]=" q.toggle === true?  {'border': '1px solid #DDD'}: {'border-bottom': '1px dashed #DDD'}"
+  *ngFor="let q of listQuestions">
+  <span  class="d-block pt-3 pb-2 questionText"  [ngStyle]="{'color': q.toggle === true? '#EC2326': '#000'}">
+    {{q.question | translate}}
+    </span>
+    <div>
+      <button class="btn IsHiddenFilterButton" (click)="q.toggle=!q.toggle">
+        <span *ngIf="q.toggle">
+          <i class="fas fa-chevron-up"></i>
+        </span>
+        <span *ngIf="!q.toggle">
+          <i class="fas fa-chevron-down"></i>
+        </span>
+      </button>
+    </div>
+    <div *ngIf="q.toggle"  class="col-12 p-0">
+      <span class="d-block answer">
+       {{q.answer | translate}}
+       <a *ngIf="q.link === true" class="text-danger" [routerLink]="['/terms']"> {{'userAgreement' | translate}}</a>
+       <span class="mx-1"  *ngIf="q.link === true">{{q.completeAnswer | translate}}</span>
+      </span>
+    </div>
+
+  </div>
+</div>
+

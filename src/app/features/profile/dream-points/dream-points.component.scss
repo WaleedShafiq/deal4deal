@@ -1,0 +1,52 @@
+@import "../../../../styles";
+.main-f{
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  border-radius: 7px;
+}
+.value{
+  font-size: 30px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+  text-align: left;
+  color: #231f20;
+}
+.txt-value{
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #231f20;
+}
+.des, .des-1, .des-2{
+  font-size: 15px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.27;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #777777;
+}
+.des-1, .v-1{
+  color: #4bbc5a;
+}
+.des-2, .v-2{
+  color: $pinkish-red;
+}
+.divider{
+  width: 100%;
+  height: 1px;
+  background: #e6e6e6;
+}
+@media (max-width: 1200px) {
+  .txt-value, p{
+    font-size: 12px !important;
+  }
+}

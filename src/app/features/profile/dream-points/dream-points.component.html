@@ -1,0 +1,46 @@
+<div class="container py-3 mt-4 animated fadeIn">
+  <div class="d-flex py-md-5 py-3">
+    <h4><i class="px-2 d-none d-md-inline-block d-lg-inline-block fa fa-arrow-left" routerLink="/profile"></i>{{'Dream Points' | translate}}</h4>
+  </div>
+ <div class="col-sm-12 d-flex justify-content-center align-items-center">
+   <div class="d-flex align-items-center py-5 main-f col-sm-5 flex-column">
+      <div class="d-flex justify-content-center align-items-center flex-column">
+        <p class="value">{{points.total_points}}</p>
+        <p class="txt-value">{{'Available dream points worth USD' | translate}}</p>
+      </div>
+<!--     //////////////////////////////////////////////////////////////////////////////////////////////-->
+     <div class="d-flex justify-content-between align-items-center col-sm-12 my-2">
+       <p class="des">{{'Earned through purchases' | translate}}</p>
+       <p>{{points.purchase_points}}</p>
+     </div>
+     <div class="d-flex justify-content-between align-items-center col-sm-12 ">
+       <p class="divider"></p>
+     </div>
+     <div class="d-flex justify-content-between align-items-center col-sm-12 ">
+       <p class="des">{{'Earned through referrals' | translate}}</p>
+       <p>{{points.referal_points}}</p>
+     </div>
+     <div class="d-flex justify-content-between align-items-center col-sm-12 ">
+       <p class="divider"></p>
+     </div>
+     <div class="d-flex justify-content-between align-items-center col-sm-12 ">
+       <p class="des-1">{{'Total earned' | translate}}</p>
+       <p class="v-1">{{points.referal_points + points.purchase_points}}</p>
+     </div>
+     <div class="d-flex justify-content-between align-items-center col-sm-12 ">
+       <p class="divider"></p>
+     </div>
+     <div class="d-flex justify-content-between align-items-center col-sm-12 ">
+       <p class="des-2">{{'Total spent' | translate}}</p>
+       <p class="v-2">{{points.total_spent}}</p>
+     </div>
+     <div class="d-flex justify-content-between align-items-center col-sm-12 ">
+       <p class="divider"></p>
+     </div>
+     <div class="d-flex justify-content-between align-items-center col-sm-12 ">
+       <p class="des">{{'Available dream points'  | translate}}</p>
+       <p>{{points.total_points}}</p>
+     </div>
+   </div>
+ </div>
+</div>

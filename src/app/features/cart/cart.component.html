@@ -1,0 +1,16 @@
+<div class="px-1 px-md-4 py-5 mx-auto c-all d-none d-md-block d-lg-block" [ngClass]="{'dis': Display, 'mr' : currentLanguage == 'ar' }">
+    <div class="checkoutprogress">
+        <div class="row d-flex justify-content-center m-all">
+            <div class="col-md-2"></div>
+            <div class="col-md-10">
+                <ul id="progressbar" class="text-center">
+                    <li class="step0 " [ngClass]="{'active': checkoutProcess.includes('carts')}"  ><p class="mt-3">{{'Cart' | translate}}</p></li>
+                    <li class="step0" [ngClass]="{'active': checkoutProcess.includes('shipping')}"><p class="mt-3">{{'SHIPPING' | translate}}</p></li>
+                    <li class="step0" [ngClass]="{'active': checkoutProcess.includes('order')}"><p class="mt-3">{{'ORDER' | translate}}</p></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

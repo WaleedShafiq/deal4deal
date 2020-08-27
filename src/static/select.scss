@@ -1,0 +1,18 @@
+@import 'color.scss';
+
+/*to remove shadow when focus*/
+.ng-select.ng-select-focused:not(.ng-select-opened)> ::ng-deep .ng-select-container  {
+  box-shadow:none;
+}
+
+.ng-select ::ng-deep .ng-select-container:focus {
+box-shadow: none;
+}
+
+/*place holder color*/
+.ng-select ::ng-deep  .ng-select-container .ng-value-container .ng-placeholder {
+  color: $whiteColor;
+}
+
+
+

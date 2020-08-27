@@ -1,0 +1,55 @@
+<div class="container animated fadeIn ">
+    <div class="row">
+        <div class="col-md-12">
+            <p class="shipping">{{'SHIPPING' | translate}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="addresscontainer">
+                <div class="row" style="margin: 0;">
+                    <div class="col-md-6 mt-4" *ngFor="let item of addressList">
+                        <div class="shippingadress p-4">
+                            <div class="addressheader mb-3">
+                                <span class="text-left">{{'shipping-address' | translate}}</span>
+                                <a class="float-right"><i (click)="EditAddress(item.id)" class="fa fa-pencil"></i></a>
+                                <a class="float-right"><i (click)="DeleteAddress(item.id)" class="fa fa-trash-o mx-1"></i></a>
+                            </div>
+                            <div class="">
+                                <span class="w-50 text-left addressdetail">
+                                    {{item.shipping_notes}},{{item.city_text}},{{item.country_text}}
+                                </span>
+                                <span class="float-right"><input type="radio" (change)="selectAddress()" [checked] = "item.id == selectedAddressId" (click)="changeSelectedAddress(item.id)" autocomplete="off"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row p-5" style="margin: 0;">
+                    <div class="w-100">
+                        <button class="btn float-right nextbtn" (click)="Next()" [disabled]="!boolean">{{'next' | translate}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="newaddress text-center">
+                <form #addressform="ngForm">
+                    <div class="text-left pt-4 pl-3 mb-5">{{'Addnewaddress' | translate}}</div>
+                    <div class="dropdown dropcontainer m-3">
+                            <ngx-select-dropdown  (change)="onCountrySelected($event)" [multiple]="false" [config]="countryConfig" [(ngModel)]="selectedCountry"
+                            [options]="countryList" required name="country"></ngx-select-dropdown>
+                    </div>
+                    <div class="dropdown m-3 dropcontainer">
+                            <ngx-select-dropdown [multiple]="false"  required name="city" [config]="cityConfig" [(ngModel)]="selectedCity" [options]="cityList"></ngx-select-dropdown>
+                    </div>
+                    <textarea [(ngModel)]="addressText" required class="form-control" name="addtext" class="addresstext mt-4"></textarea>
+                    <div>
+                        <button [disabled] ="!addressform.valid" class="btn addnewbtn mt-4" (click)="SubmitNewAddress()">{{'Addnewaddress' | translate}}</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

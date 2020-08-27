@@ -1,0 +1,48 @@
+<div class="container py-3 mt-5 mb-5 animated fadeIn">
+  <div class="d-flex mb-5">
+    <h4><i class="mx-4 fa fa-arrow-left" routerLink="/profile"></i>{{'Finished Orders' | translate}}</h4>
+  </div>
+  <div *ngIf="allOrders.length">
+  <div class="col-sm-12 d-flex justify-content-center align-items-center flex-column" *ngFor="let order of allOrders">
+    <div class="order d-flex justify-content-between col-sm-12 py-3 mb-3">
+     <div class="d-flex col-sm-6 align-items-start">
+       <p class="o-n m-0 py-2">{{'Order No' | translate}} : <span class="a-n">{{order.id}}</span></p>
+     </div>
+      <div class="d-flex col-sm-6 align-items-center justify-content-end">
+        <p class="o-n m-0 py-2 date d-flex justify-content-center align-items-center"> {{order.created_at | date:'short'}} <i (click)="order.showDetails = false" *ngIf="order.showDetails" class="fa fa-chevron-up mx-2"></i>
+          <i *ngIf="!order.showDetails" (click)="order.showDetails = true" class="fa fa-chevron-down mx-2"></i>
+        </p>
+     </div>
+    </div>
+    <div class="order-details col-sm-12" *ngIf="order.showDetails">
+      <div class="d-flex justify-content-between col-sm-12 py-3 main-f mt-4" *ngFor="let product of order.order_details">
+        <div class="d-flex col-sm-6 align-items-start">
+          <div class="main-f p-3">
+            <img class="order-img" src="{{hostUrlImages + product.campaign.product.image}}">
+          </div>
+          <div class="d-flex flex-column mx-4 pt-2">
+            <p class="title">{{order.order_details[0].campaign.product.name}}</p>
+            <p class="offer">{{'Get a chance to' | translate}} <span class="red-custom">{{'win' | translate}}</span> : {{product.campaign.prize.name}}</p>
+            <p class="main-f d-flex justify-content-center align-items-center items-no"><span>{{product.quantity}}</span></p>
+          </div>
+        </div>
+        <div class="d-flex col-sm-6 mt-2 justify-content-end">
+          <p class="order-price" [ngClass]="{'line': product.campaign.product.offer > 0}">{{order.currency_text}} {{getPrice(product.campaign.product.price)}}</p> <p *ngIf="product.campaign.product.offer > 0" class="order-price-1 mx-2">{{order.currency_text}} {{getPrice(product.campaign.product.price - product.campaign.product.offer)}}</p>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between col-sm-12 py-3 mt-4 p-0">
+        <div class="d-flex col-sm-6 align-items-start justify-content-start">
+          <p class="total">{{'TOTAL' | translate}}</p>
+        </div>
+        <div class="d-flex col-sm-2 mt-2 justify-content-end flex-column p-0">
+          <p class="total-1">{{order.currency_text}} {{getTotal(order.order_details)}}</p>
+          <p class="total-desc">{{'Free Domestic Shipping' | translate}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div *ngIf="!allOrders.length" class="col-sm-12 d-flex justify-content-center align-items-center my-5">
+  <p class="alert alert-warning col-sm-4 text-center">{{'There is no orders' | translate}}</p>
+</div>

@@ -1,0 +1,19 @@
+{
+    "dir": "ltr",
+
+    "signIn": "Sign In",
+    "emailAddress": "Email Address",
+    "emailRequired": "Email Is Required",
+    "emailMustValid": "Email Must Be A Valid Email Address",
+    "password": "Password",
+    "passwordRequired": "Password Is Required",
+    "passwordCharacters": "Password Must Be At Least 8 Characters",
+    "forgotPassword": "Forgot Password?",
+    "or": "OR",
+    "registerNow": "Register Now",
+    "newMember": "New Member?",
+    "emailParagraphTextForgetPassword": "Enter Your Email Above And We Will Send You A Link To Reset Your Password",
+    "enterEmail": "Enter Email",
+    "sendEmail": "Send Email"
+
+}

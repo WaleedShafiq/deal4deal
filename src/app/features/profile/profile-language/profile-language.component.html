@@ -1,0 +1,19 @@
+<div class="container py-5">
+  <div class="row py-5 align-items-center">
+    <div class="col-12">
+     <span class="font-weight-bold title"> {{'selectLanguage' | translate}}</span>
+    </div>
+    <div class="col-12 pt-5 px-5">
+      <label class="containerv px-5" (click)="ChangeLanguage('en')">{{'en' | translate}}
+        <input type="radio" [checked]="checkedEn === true" name="radio">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="col-12 pt-5 px-5">
+      <label class="containerv px-5" (click)="ChangeLanguage('ar')">{{'ar' | translate}}
+        <input type="radio" [checked]="checkedAr === true" name="radio">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+  </div>
+  </div>

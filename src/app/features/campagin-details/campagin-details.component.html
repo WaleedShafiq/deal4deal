@@ -1,0 +1,108 @@
+<notifier-container></notifier-container>
+<div class="container text-center pt-5 mb-5 containerOfPageDetails">
+  <div class="row">
+    <div class="col-12  bg-customLightGray">
+      <div class="row  align-items-center justify-content-between m-0">
+        <div class="col-md-4 col-6 my-1">
+          <h4 class="m-0">{{campaginDetails.product.price}}<span class="mx-1">{{currencyName}}</span></h4>
+        </div>
+        <div class="col-md-4 col-6 my-1 order-md-12">
+          <button class="btn shareButtons"  [disabled]="campaginDetails.status === 'sold out'">
+            <!-- <i *ngIf="IsWhished" (click)="removeCampaginTowhishlist(campaginDetails)" [ngStyle]="{'color':'#EC2326'}" class="fas fa-heart"></i> -->
+            <i  [ngStyle]="IsWhished === true ? {'color':'#EC2326'}:  {'color': '#adb5bd'}"
+             (click)="addCampaginTowhishlist(campaginDetails)"  class="fas fa-heart"></i>
+          </button>
+          <button class="btn shareButtons" (click)="open(shareModal, campaginDetails)" [disabled]="campaginDetails.status === 'sold out'">
+            <i  [ngStyle]="{'color': '#adb5bd'}" class="fas fa-share-alt"></i>
+          </button>
+        </div>
+        <div class="col-md-4 col-12 order-md-1 my-1">
+          <p class="mt-2 mb-1">
+            <span>{{campaginDetails.sold}}</span>
+            <span class="mx-1">{{'SoldOutOf' | translate}}</span>
+            <span>{{campaginDetails.total_num_of_sells}}</span>
+          </p>
+          <div class="progress mb-2">
+          <div [ngStyle]="{'width': ((campaginDetails.sold * 100) / campaginDetails.total_num_of_sells )  + '%'}" class="progress-bar bg-warning exploreProgress" *ngIf="campaginDetails.status === 'Open'"></div>
+          <div [ngStyle]="{'width': ((campaginDetails.sold * 100) / campaginDetails.total_num_of_sells ) + '%'}" class="progress-bar bg-danger closingProgress" *ngIf="campaginDetails.status === 'Closing Soon'"></div>
+          <div [ngStyle]="{'width':  100 + '%'}"  class="progress-bar bg-muted soldProgress" *ngIf="campaginDetails.status === 'sold out'"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+      <div class="col-12">
+      <div class="row imageAndPriceRow">
+        <div class="col-md-6 col-12 ">
+          <div class="mt-5 mb-3 customBorderMobile" [ngStyle]="{ 'border-right':currentlanguage === 'en'? '1px solid #eae5e5': ''}">
+            <img [src]="baseURL +campaginDetails.product.image" alt="img"
+            class="img-fluid">
+          </div>
+          <h6 class="customDarkColor">{{'buy' | translate}} </h6>
+          <h3 class="customDarkColor">{{campaginDetails.product.name}}</h3>
+          <p class="text-muted text-left mb-0 px-3">
+            {{campaginDetails.product.description}}
+          </p>
+        </div>
+
+
+        <div class="col-md-6 col-12">
+          <div class="mt-5 mb-3 customBorderMobile" [ngStyle]="{ 'border-right':currentlanguage === 'ar'? '1px solid #eae5e5': ''}">
+            <img [src]=" baseURL + campaginDetails.prize.image" alt="img" class="img-fluid">
+        </div>
+          <h6 class="customDarkColor"> {{'getAChanceTo' | translate}}<span class="text-danger"> {{'win' | translate}} </span></h6>
+          <p class="customDarkColor text-center">{{campaginDetails.prize.name}}</p>
+          <p class="text-muted text-left px-3">
+            {{campaginDetails.prize.description}}
+          </p>
+
+
+          <div class="row align-items-center justify-content-around  mb-4 mx-0 sectioncart">
+            <div class="col-6 buttonsGroup">
+              <button type="button" class="mx-1 bg-gray border-0 decreaseButton" (click)="decreaseCampaginQuantity()">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+              </button>
+              <input type="number" class="form-control border border-dark rounded-0 text-center" [(ngModel)]="campaginQuantityInCart">
+              <button type="button" class="mx-1 bg-gray border-0  IncreaseButton" (click)="increaseCampaginQuantity()">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-danger" [ladda]="submitted" (click)="addCampaginToCart(campaginDetails)">
+               {{'AddToCart' | translate}}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<ng-template #shareModal let-modal>
+  <div class="modal-body shareModal">
+    <div class="p-3">
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <span>Share</span>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div>
+          <share-buttons [theme]="'circles-dark'"
+          [include]="['facebook','twitter','linkedin', 'whatsapp','messenger']" [show]="6"
+          [showText]="true" [size]="-1" [url]="urlShare"></share-buttons>
+        </div>
+      </div>
+      <div class="row justify-content-between px-4">
+        <input type="text" class="col-8" style="border: none" [value]="urlShare" readonly>
+        <share-buttons [theme]="'circles-dark'" id="CopyButton" [include]="['copy']" [show]="1" [showText]="true"
+          [size]="-1" [url]="urlShare">
+        </share-buttons>
+      </div>
+    </div>
+  </div>
+</ng-template>

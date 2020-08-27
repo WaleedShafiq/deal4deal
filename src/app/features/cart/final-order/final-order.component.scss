@@ -1,0 +1,136 @@
+@import "../../../../styles";
+.main-f{
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+}
+.paymentoption{
+  height: 15px;
+
+
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #777777;
+}
+.divider{
+  width: 100%;
+  height: 1px;
+  background: #e6e6e6;
+}
+.credit-card, .dream_points, .cash{
+  width: 34.1px;
+  height: 22.7px;
+  object-fit: contain;
+  opacity: 0.7;
+}
+input[type='radio'] {
+  width: 26.6px;
+  height: 22.6px;
+  object-fit: contain;
+  border: solid 2px #777777;
+}
+.c-l{
+  font-size: 16px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #777777;
+}
+input[type='checkbox']{
+  width: 21px;
+  height: 25px;
+  border-radius: 4px;
+  border: solid 3px #777777;
+}
+.header{
+  font-size: 19px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.26;
+  letter-spacing: 1.33px;
+  text-align: left;
+  color: #231f20;
+}
+.details{
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: 0.98px;
+  text-align: left;
+  color: #777777;
+}
+.dollar {
+  width: 21px;
+  height: 21px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  padding: 7px 10px;
+  border-radius: 17px;
+}
+.msg{
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: 0.84px;
+  text-align: left;
+  color: #231f20;
+}
+.info{
+  font-size: 14px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: left;
+  color: #777777;
+}
+.billing{
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #777777;
+}
+
+.cart6 {
+    width: 1366px;
+    height: 1021px;
+    background-color: #ffffff;
+  }
+  .Inner-Ellipse {
+    width: 9.2px;
+    height: 9.2px;
+    object-fit: contain;
+    background-color: #231f20;
+  }
+  .addnewcardtext{
+    width: 113px;
+  height: 36px;
+
+
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color:#ec2326 !important;
+  }
+

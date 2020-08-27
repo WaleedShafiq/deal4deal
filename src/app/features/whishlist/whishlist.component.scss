@@ -1,0 +1,81 @@
+@import 'layout';
+
+/*empty cart*/
+
+span.noItemsDescription {
+    font-size: 1.5rem;
+}
+
+span.shopping {
+    font-size: 100px;
+}
+
+span.noItemsDescription {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 30px;
+}
+
+button {
+    font-size: 20px;
+}
+
+
+/*empty cart*/
+
+::ng-deep #whislistPageCarousel .owlCarouselCampagin {
+    direction: ltr;
+}
+
+::ng-deep #whislistPageCarousel .owl-theme .owl-nav {
+    margin-top: 0;
+    position: relative;
+    bottom: 235px;
+    display: flex;
+    justify-content: space-between;
+    height: 55px;
+}
+
+::ng-deep #whislistPageCarousel .owl-theme .owl-nav .owl-prev,
+::ng-deep #whislistPageCarousel .owl-theme .owl-nav .owl-next {
+    color: $whiteColor;
+    font-size: 15px;
+    margin: 0px;
+    padding: 16px 7px 18px 9px;
+    background: $blackColor;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+::ng-deep #whislistPageCarousel .owl-theme .owl-nav .disabled {
+    background: #D6D6D6;
+}
+
+@media (max-width: 990px) {
+  ::ng-deep #whislistPageCarousel .owl-theme .owl-nav {
+    display: none !important;
+}
+.container {
+  padding-top: 0 !important;
+  h2{
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+span.shopping {
+  font-size: 80px;
+  margin: 0 !important;
+}
+span.noItemsDescription {
+  font-size: 1.2rem;
+  padding: 13px 0;
+}
+button.btn-danger {
+  font-size: 16px;
+  padding: 9px 17px !important;
+}
+}

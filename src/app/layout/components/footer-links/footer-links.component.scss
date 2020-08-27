@@ -1,0 +1,43 @@
+@import 'layout';
+
+div.footerLinksContainer {
+    border-top: 3px solid #d1d3d6;
+    a {
+        display: block;
+        cursor: pointer;
+    }
+    .footerAnchor {
+        //color: #4a4a4a;
+        color: $blackColor;
+        text-decoration: none;
+    }
+    a.emailLink {
+      color: rgba(35, 31, 32, 0.7);
+    }
+    a:hover {
+        color: $redColor;
+        font-weight: bold;
+    }
+}
+
+img.appStore {
+    width: 190px;
+    cursor: pointer;
+}
+
+@media (max-width: 990px) {
+
+    .footerLinksContainer {
+      margin-top: 15px;
+        text-align: center;
+        .row {
+            .container {
+                .row {
+                    div.colInContainerLast {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}

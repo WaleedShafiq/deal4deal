@@ -1,0 +1,36 @@
+<div dir="{{'dir'| translate}}">
+
+<div class="container pt-5">
+  <div class="row justify-content-center align-content-center mx-3">
+      <div class="col-12">
+          <h2>{{'whishlist' | translate}}</h2>
+      </div>
+  </div>
+</div>
+
+<notifier-container></notifier-container>
+
+<div class="container text-center" *ngIf="allRows.length == 0 && dataGetted">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-12 text-center">
+      <span class=" d-block text-danger shopping m-3">
+        <i class="far fa-heart"></i>
+      </span>
+      <span class="text-muted d-block noItemsDescription">{{'noItemsInWhish' | translate}}</span>
+      <button  [routerLink]="['/campagines']" class="btn btn-danger btn-lg my-3 px-5">{{'startShopping' | translate}}</button>
+    </div>
+  </div>
+</div>
+<br>
+
+<block-ui class="blockUI">
+<div class="container" id="whislistPageCarousel" *ngIf="allRows.length != 0">
+    <owl-carousel-o [options]="customOptions" class="owlCarouselCampagin">
+      <ng-template carouselSlide *ngFor="let camp of allRows">
+        <app-card [currencyName]="currencyName" [campagin]="camp.campaign"
+        (whishlistRemoved)='notifyDelete()' (whishlistRemovedLogin)="notifyDeleteLogin()"></app-card>
+      </ng-template>
+    </owl-carousel-o>
+</div>
+</block-ui>
+</div>

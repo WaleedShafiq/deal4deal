@@ -1,0 +1,56 @@
+<div class="container py-5 animated fadeIn">
+  <div class="topTitle pt-5">
+    <h4><i class="px-2 d-none d-md-block d-lg-block fa fa-arrow-left" routerLink="/profile"></i>{{'Levels' | translate}}</h4>
+  </div>
+  <div class="d-flex align-items-center justify-content-around py-5 row col-12 rowAllPage">
+    <div class="d-flex justify-content-center align-items-center flex-column col-sm-10 col-md-5 main-d py-3">
+      <div class="col-sm-12 text-center">
+        <img class="" src="assets/img/Group1827.svg">
+        <p class="pt-3 text-center silver">
+          {{currentLanguage === 'en' ? ( currentLevel.name_en | titlecase) : (currentLevel.name_ar | titlecase)}}</p>
+      </div>
+      <div class="col-sm-12 text-center">
+        <p class="p-d">{{'earn' | translate}}
+          <span class="red">10 {{'dreamPoints' | translate}}</span> {{'onEvery' | translate}}
+          <span class="red"> 100 USD</span> {{'spend' | translate}} .</p>
+      </div>
+      <div class="col-sm-12 text-center">
+        <p class="empty"></p>
+        <div class="d-flex justify-content-between">
+          <p class="note"><span class="red">{{currentLevel.earned_points}} </span>{{'Points earned' | translate}}</p>
+          <p class="note">{{'nextLevel' | translate}} @<span class="red">{{currentLevel.limit_points}} </span>
+            {{'points' | translate}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center flex-column py-3 col-sm-10 col-md-5 m-l">
+      <div class="d-flex text-left col pl-0">
+        <p class="header">{{'nextLevels' | translate}}</p>
+      </div>
+      <div class="main-d d-flex row pt-2">
+        <div class="col-sm-2 n-l-i pt-2">
+          <img src="assets/img/bronzCup.png">
+        </div>
+        <div class="col-sm-10 n-l-t">
+          <p class="label text-left">
+            {{currentLanguage === 'en' ? ( nextLevels[0].name_en | titlecase) : (nextLevels[0].name_ar | titlecase)}}
+          </p>
+          <p class="desc">
+            {{'You will earn 30 dreams points on every 100 USD spent for a 12 month trailing period' | translate}}</p>
+        </div>
+      </div>
+      <div class="main-d d-flex row my-3 pt-2">
+        <div class="col-sm-2 n-l-i pt-2">
+          <img src="assets/img/gold.png">
+        </div>
+        <div class="col-sm-10 n-l-t">
+          <p class="label text-left">
+            {{currentLanguage === 'en' ? ( nextLevels[1].name_en | titlecase) : (nextLevels[1].name_ar | titlecase)}}
+          </p>
+          <p class="desc">
+            {{'You will earn 40 dreams points on every 100 USD spent for a 12 month trailing period' | translate}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

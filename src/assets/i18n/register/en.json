@@ -1,0 +1,51 @@
+{
+    "dir": "ltr",
+
+    "registeration": "Registeration",
+    "register": "Register",
+    "valid": "valid",
+
+    "firstName": "First Name",
+    "firstNamRequired": "First Name Is Required",
+    "firstNameLength": "First Name Must Be At Least 4 Characters",
+
+    "lastName": "Last Name",
+    "lastNameRequired": "Last Name Is Required",
+    "lastNameLength": "First Name Must Be At Least 4 Characters",
+
+    "email": "Email",
+    "emailRequired": "Email Is Required",
+    "emailValidation": "Email Must Be Correct",
+
+    "countrycode": "Country Code",
+    "countrycodeRequired": "Country Code Is Required",
+
+    "phoneNumber": "Mobile Number",
+    "phoneNumberRequired": " Mobile Number Is Required",
+    "invalidPhoneNumber": "Invalid Phone Number",
+
+    "verifyNow": "Verify Now",
+
+    "password": "Password",
+    "passwordRequired": "Password Is Required",
+    "passwordCharacters": "Password must at least 8 Characters",
+
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordRequired": " Confirm Password Is Required",
+    "passswordConfirmPasswordMatch": "Passsword and ConfirmPassword didn't match.",
+    "match": "Matches",
+
+    "invitationCode": "Invitation Code (Option)",
+    "invitationCodeValid": "Invitation Code is invalid",
+
+    "signingAggreement": "By Signing Up You Arrange To Our User Aggreement, To Our",
+    "credentialAggreement": "User Aggreement,",
+    "privacyPolicy": "Privacy Policy",
+    "and": "And",
+    "drawTermConditions": "Draw Term & Conditions",
+
+    "acceptConditionsRequired": "Accept conditions Is Required",
+
+    "enterEmail": "Enter Email",
+    "emailAddress": "Email Address"
+}

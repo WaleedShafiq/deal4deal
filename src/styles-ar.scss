@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Cairo&display=swap');
+
+*:not(i) {
+  font-family: 'Cairo';
+}
+html,
+body {
+    direction: rtl;
+}
+
+.text-left {
+    text-align: right !important;
+}
+
+.text-right {
+    text-align: left !important;
+}
+
+input,
+.label-t {
+    text-align: right !important;
+}
+
+.fa-arrow-left:before {
+    content: '\f061' !important;
+}
+
+.active,
+.not-active {
+    left: 0 !important;
+}
+
+.copy {
+    margin-top: 1rem!important;
+}
+
+.c-all {
+    direction: ltr;
+}
+
+#progressbar li {
+    float: right !important;
+}
+
+.left {
+    float: right;
+}
+
+.right {
+    float: left;
+}
+
+#progressbar li:first-child:after {
+    right: 50% !important;
+    left: unset !important;
+}
+
+#progressbar li:nth-child(2):after,
+#progressbar li:nth-child(3):after {
+    right: -50%;
+    left: unset !important;
+}
+
+.m-all {
+    direction: rtl;
+}
+
+.t-r {
+    text-align: right !important;
+}

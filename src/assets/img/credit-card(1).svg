@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34.07" height="22.714" viewBox="0 0 34.07 22.714">
+    <defs>
+        <style>
+            .cls-1{opacity:.7}.cls-2{fill:#231f20}
+        </style>
+    </defs>
+    <g id="credit-card_1_" class="cls-1" data-name="credit-card (1)" transform="translate(0 -85.333)">
+        <g id="Group_1709" data-name="Group 1709" transform="translate(0 85.333)">
+            <g id="Group_1708" data-name="Group 1708">
+                <path id="Path_2824" d="M30.521 85.333H3.549A3.554 3.554 0 0 0 0 88.882V104.5a3.554 3.554 0 0 0 3.549 3.549h26.972a3.554 3.554 0 0 0 3.549-3.549V88.882a3.554 3.554 0 0 0-3.549-3.549zm2.13 19.167a2.132 2.132 0 0 1-2.129 2.129H3.549A2.132 2.132 0 0 1 1.42 104.5V88.882a2.132 2.132 0 0 1 2.129-2.129h26.972a2.132 2.132 0 0 1 2.129 2.129V104.5z" class="cls-2" data-name="Path 2824" transform="translate(0 -85.333)"/>
+            </g>
+        </g>
+        <g id="Group_1711" data-name="Group 1711" transform="translate(0 89.592)">
+            <g id="Group_1710" data-name="Group 1710">
+                <path id="Path_2825" d="M33.36 149.333H.71a.71.71 0 0 0-.71.71v4.257a.71.71 0 0 0 .71.71h32.65a.71.71 0 0 0 .71-.71v-4.259a.71.71 0 0 0-.71-.708zm-.71 4.259H1.42v-2.839h31.231v2.839z" class="cls-2" data-name="Path 2825" transform="translate(0 -149.333)"/>
+            </g>
+        </g>
+        <g id="Group_1713" data-name="Group 1713" transform="translate(4.259 99.529)">
+            <g id="Group_1712" data-name="Group 1712">
+                <path id="Path_2826" d="M73.227 298.667H64.71a.71.71 0 1 0 0 1.42h8.518a.71.71 0 1 0 0-1.42z" class="cls-2" data-name="Path 2826" transform="translate(-64 -298.667)"/>
+            </g>
+        </g>
+        <g id="Group_1715" data-name="Group 1715" transform="translate(4.259 102.368)">
+            <g id="Group_1714" data-name="Group 1714">
+                <path id="Path_2827" d="M73.227 341.333H64.71a.71.71 0 1 0 0 1.42h8.518a.71.71 0 0 0 0-1.42z" class="cls-2" data-name="Path 2827" transform="translate(-64 -341.333)"/>
+            </g>
+        </g>
+        <g id="Group_1717" data-name="Group 1717" transform="translate(24.133 98.109)">
+            <g id="Group_1716" data-name="Group 1716">
+                <path id="Path_2828" d="M366.216 277.333H364.8a2.132 2.132 0 0 0-2.129 2.129v1.42a2.132 2.132 0 0 0 2.129 2.129h1.42a2.132 2.132 0 0 0 2.129-2.129v-1.42a2.132 2.132 0 0 0-2.133-2.129zm.71 3.549a.71.71 0 0 1-.71.71H364.8a.71.71 0 0 1-.71-.71v-1.42a.71.71 0 0 1 .71-.71h1.42a.71.71 0 0 1 .71.71z" class="cls-2" data-name="Path 2828" transform="translate(-362.667 -277.333)"/>
+            </g>
+        </g>
+    </g>
+</svg>

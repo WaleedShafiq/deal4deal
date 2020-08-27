@@ -1,0 +1,60 @@
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-12">
+      <h4 class="mb-0 pb-3">
+        {{'winners' | translate}}
+      </h4>
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="winnersPageCarousel">
+  <div class="row">
+    <div class="col-12">
+      <owl-carousel-o [options]="customOptions" class="winnerCarousel">
+        <ng-template carouselSlide *ngFor="let winner of allRows">
+          <div class="all">
+            <div class="container cardWinner">
+              <div class="row rounded  border border-muted firstRowWinners">
+                <div class="col-12 text-center py-2 bg-danger rounded-top text-light">
+                  {{'congratulations' | translate}}
+                </div>
+                <div class="col-12 secondRow nameAndImageInWinnerPage">
+                  <div class="row align-items-center" [ngStyle]="{direction: currentlanguage === 'en' ? 'ltr': 'rtl'}">
+                    <div class="col-4 px-2 py-3 containerImage">
+                      <img  *ngIf=" winner.client.image != null "
+                       [src]="ImageURL + winner.client.image" alt="image"
+                        class="img-fluid rounded">
+                        <img *ngIf=" winner.client.image == null ||  winner.client.image == '' "
+                        src="assets/img/defaultWinner.png" alt="img" class="img-fluid rounded">
+                    </div>
+                    <div class="col-8 px-0 containerNameAndDate">
+                      <p class="font-weight-bold mb-0">{{winner.client.first_name}}</p>
+                      <p class=" text-muted winnerTime mb-0">{{winner.created_at | date:'medium' }}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 text-center mt-3 mb-3 thirdRow">
+                  <span class="spanPrizeName">
+                      {{winner.campaign.prize.name}}
+                  </span>
+                </div>
+                <div class="col-12 text-center forthRow">
+                  <span>
+                    <span class="ticketNumLabel">{{'ticketNum' | translate}} </span>
+                    <span class="text-danger">{{winner.ticket.ticket_number}}</span>
+                  </span>
+                </div>
+                <div class="col-12 mt-4 mb-4 fiveRow">
+                  <img  [src]=  "'https://deal4deal.app/deal4deal_backend/public/' + winner.campaign.prize.image"
+                  class="img-fluid prizeImage" alt="image">
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,132 @@
+@import "../../../../styles";
+.main-d{
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+.money{
+  color: $pinkish-red;
+}
+.code{
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: 0.28px;
+  text-align: center;
+  color: #777777;
+
+}
+.l-p{
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.27;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #777777;
+}
+.code-1{
+  width: 165px;
+  height: 45px;
+  object-fit: contain;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+}
+.label{
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: 0.28px;
+  text-align: center;
+  color: #777777;
+}
+.desc{
+  font-size: 12px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: 0.24px;
+  text-align: left;
+  color: #777777;
+}
+.header{
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: 0.32px;
+  text-align: center;
+  color: #777777;
+}
+.silver{
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+  text-align: left;
+  color: #231f20;
+}
+.red{
+  color: $pinkish-red;
+}
+.empty{
+  width: 95%;
+  height: 10px;
+  background-color: #dddddd;
+  border-radius: 6px;
+}
+.p-d{
+  font-size: 14px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: 0.28px;
+  text-align: center;
+  color: #777777;
+}
+.note{
+  font-size: 12px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: 0.28px;
+  text-align: center;
+  color: #777777;
+}
+@media (max-width: 577px) {
+  .n-l-i, .n-l-t p{
+    text-align: center !important;
+  }
+  .n-l-t{
+    margin-top: 10px;
+  }
+  .m-l{
+    margin-top: 20px;
+  }
+}
+
+
+@media (max-width: 990px) {
+  .animated {
+    padding: 0 !important;
+  }
+.rowAllPage{
+  margin: 0 !important;
+  padding-top: 0 !important;
+}
+.topTitle {
+  padding: 23px !important;
+}
+}

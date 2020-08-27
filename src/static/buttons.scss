@@ -1,0 +1,72 @@
+@import './color.scss';
+a.customLink {
+  cursor: pointer;
+}
+
+button.btn-danger {
+  background-color: $redColor !important;
+  color: $whiteColor;
+  text-align: center;
+}
+button.btn-danger:hover {
+  background-color: $whiteColor !important;
+  color: $redColor;
+  border: 1px solid $redColor;
+}
+
+button.btn-outline-danger {
+  background-color: $whiteColor !important;
+  color: $redColor;
+}
+
+button.btn-outline-danger:hover {
+  background-color: $redColor !important;
+  color: $whiteColor;
+}
+
+/* toggler button navbar*/
+
+.icon-bar {
+  width: 22px;
+  height: 2px;
+  background-color: $redColor;
+  display: block;
+  transition: all 0.2s;
+  margin-top: 4px
+}
+
+.navbar-toggler {
+  border: none;
+  background: transparent !important;
+}
+
+.navbar-toggler .top-bar {
+transform: rotate(45deg);
+transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+opacity: 0;
+}
+
+.navbar-toggler .bottom-bar {
+transform: rotate(-45deg);
+transform-origin: 10% 90%;
+}
+
+.navbar-toggler.collapsed .top-bar {
+transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+opacity: 1;
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+transform: rotate(0);
+}
+button.navbar-toggler:focus{
+  outline: 0;
+}
+
+/* toggler button navbar*/

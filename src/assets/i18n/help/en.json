@@ -1,0 +1,13 @@
+{
+    "helpCenter": "Help Center",
+    "name": "Your Name",
+    "mail": "Your Mail",
+    "message": "Your Message",
+    "send": "Send",
+    "emailRequired": "Email Is Required",
+    "emailMustValid": "Email Must Be A Valid Email Address",
+    "nameRequired": "Name Is Required",
+    "nameCharacters": "Name Must Be At Least 8 Characters",
+    "messageRequired": "Message Is Required"
+
+}

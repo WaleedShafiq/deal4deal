@@ -1,0 +1,386 @@
+.cartTitle {
+    font-size: 25px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.96;
+    letter-spacing: normal;
+    text-align: center;
+    color: #231f20;
+}
+
+.item-card {
+    height: 176px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+}
+
+.card {
+    flex-direction: row !important;
+}
+
+.card-img {
+    width: 119px;
+    height: 112px;
+    object-fit: contain;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+}
+
+.Get-a-chance-to-win- {
+    width: 177px;
+    height: 23px;
+    object-fit: contain;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.28;
+    letter-spacing: normal;
+    text-align: left;
+    color: #777777;
+}
+
+.Get-a-chance-to-win- .text-style-1 {
+    color: #ec2326;
+}
+
+.Armor-Blu {
+    height: 23px;
+    object-fit: contain;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.28;
+    letter-spacing: normal;
+    color: #777777;
+}
+
+.control {
+    line-height: 3;
+}
+
+.control button {
+    width: 38px;
+    height: 31px;
+    background-color: #e2e8ed;
+    line-height: 0;
+    border-radius: 0;
+    vertical-align: unset;
+}
+
+.item-quantity {
+    width: 38px;
+    height: 31px;
+    border: solid 1px #231f20;
+}
+
+.removebtn {
+    width: 145px;
+    height: 49px;
+    border: solid 1px #231f20;
+    background: transparent;
+}
+
+.item-price {
+    // width: 231px;
+    height: 43px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+    //  font-family: Cairo;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.28;
+    letter-spacing: normal;
+    text-align: right;
+    color: #231f20;
+    line-height: 2.5;
+}
+
+.orginalprice {
+    width: 89px;
+    height: 23px;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.28;
+    letter-spacing: normal;
+    text-align: right;
+    color: #777777;
+    //text-decoration: line-through;
+}
+
+.ticketgroup {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #ffa500;
+    color: white;
+    line-height: 1;
+    font-size: 14px;
+}
+
+.ticketimg {
+    width: 20px;
+    height: 16px;
+    object-fit: contain;
+    border: solid 1.2px #231f20;
+}
+
+.card-footer {
+    background: unset;
+    border-top: unset;
+    padding: 0;
+}
+
+.summary {
+    // width: 352px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+    padding: 20px
+}
+
+.total {
+    width: 57px;
+    height: 24px;
+    font-size: 19px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.26;
+    letter-spacing: 1.33px;
+    text-align: left;
+    color: #231f20;
+}
+
+.items-details {
+    //   font-family: Cairo;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: 0.98px;
+    color: #777777;
+    border-bottom: 1px solid #c3c1c1;
+    padding: 10px 0;
+}
+
+.ells {
+    width: 21px;
+    height: 21px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+    color: #8b9dff;
+    font-family: SegoeUI;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: 0.84px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50%
+}
+
+.dreampoints {
+    width: 102px;
+    height: 15px;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: 0.84px;
+    text-align: left;
+    color: #ec2326;
+}
+
+.donate {
+    height: 133px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px 0 rgba(35, 31, 32, 0.16);
+    background-color: #ffffff;
+}
+
+.happybtn {
+    height: 30px;
+    border-radius: 10px;
+    border: solid 1px #e2e8ed;
+    background-color: #4bbc5a;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+}
+
+.sadbtn {
+    height: 30px;
+    border-radius: 10px;
+    border: solid 1px #e2e8ed;
+    background-color: #e2e8ed;
+    font-family: SegoeUI;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.31;
+    letter-spacing: normal;
+    text-align: left;
+    color: #231f20;
+}
+
+.sadbtn i,
+.happybtn i {
+    font-size: 20px;
+    vertical-align: middle;
+    color: #ec2326;
+}
+
+.nextbtn {
+    width: 100%;
+    height: 52px;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px 0 rgba(236, 35, 38, 0.4);
+    background-color: #ec2326;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: 0.84px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.statusicon {
+    width: 65px;
+    height: 26.7px;
+    border: solid 1px #ec2326;
+    background-color: #ec2326;
+    font-size: 10px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.3;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+.line {
+    text-decoration: line-through;
+}
+
+@media (max-width: 768px) {
+    // .statusicon{
+    //     left:30%;
+    // };
+    // .item-card {
+    //     height:400px;
+    // };
+}
+
+.t-r {
+    text-align: left;
+}
+
+//******************** badge of price *****************************
+div.statusicon:after,
+div.labelMobile:after {
+    border-width: 8px;
+    border-style: solid;
+    border-color: #000 transparent transparent #000;
+    bottom: -17px;
+    content: "";
+    position: absolute;
+    left: 0px;
+    transform: rotate(90deg);
+}
+
+///////////////////////////////@extend
+// @media (max-width: 990px){
+// .item-card{
+//   margin: 0 5px;
+// }
+// .item-card {
+//   height:338px;
+// };
+// .topTitle{
+//   padding: 22px;
+// }
+// .mobileContainer, .getChanceMobile {
+//   text-align: center !important;
+// }
+// .imageContainer{
+//   padding-top: 10px;
+//   text-align: left !important;
+// }
+// .statusicon{
+//   left: 1%;
+//   top: 19%;
+// }
+// .card-img {
+//   margin: 0 5px;
+// }
+// }
+.containerCartMobile {
+    padding: 0 10px;
+}
+
+.containerCartMobileRow,
+.containerImageMobile,
+.priceProductMobile {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+}
+
+.containerCartMobileRow {
+    padding: 10px 22px;
+    margin: 10px 0;
+    border-radius: 15px;
+}
+
+.labelMobile {
+    width: 65px;
+    height: 26.7px;
+    border: solid 1px #ec2326;
+    background-color: #ec2326;
+    font-size: 10px;
+    line-height: 2.3;
+    text-align: center;
+    color: #ffffff;
+    position: absolute;
+    top: 10%;
+    left: -12%;
+}
+
+.chanceMobile {
+    font-size: 14px;
+}
+
+.inputQuantityMobile {
+    width: 42px;
+    height: 38px;
+    border: solid 1px #231f20;
+}
+
+button.btn-outline-dark {
+    border-radius: 0;
+}

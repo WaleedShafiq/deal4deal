@@ -1,0 +1,123 @@
+@import "../../../styles";
+.all-notifications{
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+}
+.close-noty{
+  width: 37.3px;
+  height: 37.3px;
+  border: solid 1px #d9d8d8;
+  background-color: #ffffff;
+  font-size: 25px;
+  color: #8a8a8a;
+  cursor: pointer;
+}
+.all{
+  color: $pinkish-red;
+}
+.header{
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  //max-height: 60px !important;
+}
+.actions{
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #777777;
+  cursor: pointer;
+}
+.content, .content-1{
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+}
+.content-1{
+  background: #e2e8ed !important;
+}
+.close-noty-1{
+  width: 37.3px;
+  height: 37.3px;
+  font-size: 25px;
+  color: #cac4c4;
+}
+.icons-noty{
+  width: 20px;
+  height: 20px;
+}
+.noty-desc{
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #231f20;
+}
+.c-n{
+  margin-top: -55px;
+  >i{
+    cursor: pointer;
+  }
+}
+
+.fa-refresh{
+  font-size: 30px;
+  cursor: pointer;
+}
+.dot{
+  font-size: 18px;
+  font-weight: bolder;
+}
+.notification-title{
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #777777;
+}
+@media (max-width: 1200px) {
+  .all{
+    font-size: 13px;
+  }
+  .actions, .notification-title{
+    font-size: 12px;
+  }
+  .icons-noty{
+    width: 15px;
+    height: 15px;
+  }
+  h4{
+    margin-left: 1.5rem!important;
+  }
+  .red{
+    font-size: 13px;
+  }
+  .noty-desc{
+    font-size: 13px;
+  }
+  .close-noty-1{
+    font-size: 19px;
+  }
+  .close-noty{
+    width: 30.3px;
+    height: 30.3px;
+    border: solid 1px #d9d8d8;
+    background-color: #ffffff;
+    font-size: 20px;
+  }
+  .icon-n{
+    width: 70px;
+    height: 70px;
+  }
+  .fa-refresh{
+    font-size: 20px;
+  }
+}

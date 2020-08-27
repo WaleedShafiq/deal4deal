@@ -1,0 +1,161 @@
+
+<div class="bg-white d-none d-md-block d-lg-block" id="navbar">
+  <div class="container">
+<nav class="navbar navbar-expand-lg row pb-0" >
+
+  <a class="navbar-brand" [routerLink]="['/campaign']" routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }">
+    <img src="assets/img/logo.png" alt="img" class="img-fluid logo">
+  </a>
+
+  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarToggle"
+    aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="icon-bar top-bar"></span>
+    <span class="icon-bar middle-bar"></span>
+    <span class="icon-bar bottom-bar"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-between" id="navbarToggle">
+    <ul class="navbar-nav leftLinksNavbar pr-0 pt-3">
+      <li class="nav-item"  data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="nav-link customLink font-weight-bold" [routerLink]="['/campaign']" routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+         >
+          {{'Campagines' | translate}}
+        </a>
+      </li>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="nav-link customLink font-weight-bold" [routerLink]="['/products']" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >
+          {{'products' | translate}}
+
+
+        </a>
+      </li>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="nav-link customLink font-weight-bold" [routerLink]="['/charity']" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >
+          {{'charities' | translate}}
+
+        </a>
+      </li>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="nav-link customLink font-weight-bold" [routerLink]="['/winner']" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+          {{'winners' | translate}}
+        </a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav rightLinks p-0">
+      <li class="nav-item px-2" id="notificationsIcon" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="nav-link"  routerLink="/notifications" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <img src="assets/img/bell.png" alt="image" class="img-fluid">
+          <span class="badge" id="Bellnotifaction">0</span>
+        </a>
+      </li>
+      <li class="nav-item px-2"  data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="nav-link" routerLink="/whishlist"  routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        <img src="assets/img/heartNavbar.png" alt="image" class="img-fluid heartImage">
+          <!-- <span class="mx-2 text-dark whishlistIcon"> -->
+            <!-- <i class="far fa-heart"></i> -->
+
+          <!-- </span> -->
+          <span class="badge" id="Whishlistnotifaction">{{whishlistLength}}</span>
+        </a>
+      </li>
+      <li class="nav-item px-2 cartInNavbar" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="nav-link" routerLink="/cart" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+          <img src="assets/img/shoppingCart.png" alt="image">
+          <span class="badge" id="cartNumberNotifaction">{{cartLength}}</span>
+        </a>
+      </li>
+
+      <!-- routerLink="/profile" -->
+      <li class="nav-item d-none d-md-block .d-lg-block" id="userLogin" (clickOutside)="closeLogin()" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="nav-link" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+          <img (click)="toggleDropDown()" *ngIf="getUserImage()" class="profile-img img-fluid" src="{{hostUrlImages + getUserImage()}}" alt="image"
+               >
+          <img (click)="toggleDropDown()" *ngIf="!getUserImage()" class=" img-fluid" src="{{defaultImage}}" alt="image" d
+               >
+            <!-- <span class="triangle"></span> -->
+            <div *ngIf="checkForData()" class="dropdown-menu mt-4 border border-secondary" [ngStyle]="{'display': showDrop ? 'block' : 'none'}" [ngClass]="language === 'en'? 'dropdown-menu-right': 'dropdown-menu-left'">
+              <!-- <div class="arrow-up"></div> -->
+            <!-- (click)="preventCloseLoginFormOnClick($event)" -->
+            <app-login></app-login>
+          </div>
+        </a>
+      </li>
+      <li *ngIf="!isLogin" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <button class="d-md-none d-lg-none btn btn-danger"
+        routerLink="/login">{{'login' | translate}}
+      </button>
+      </li>
+      <li (click)="logOut()" *ngIf="isLogin" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <button class="d-md-none d-lg-none btn btn-danger"
+        >{{'logout' | translate}}
+      </button>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+</div>
+
+
+<div class="bg-white fixed-bottom d-block d-md-none d-lg-none" id="mobileNavbar">
+  <div class="container">
+    <div class="row justify-content-around text-center py-2">
+      <div class="menuMobile" [routerLink]="['/campaign']" routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true }">
+        <span>
+          <img *ngIf="!hasRoute('campaign')" src="assets/img/Mobile/Home.png" alt="img" class="img-fluid">
+          <img *ngIf="hasRoute('campaign')"  src="assets/img/Mobile/Home-active.png" alt="img" class="img-fluid">
+        </span>
+        <a class="d-block " >{{'home' | translate}}</a>
+      </div>
+      <div  class="menuMobile" [routerLink]="['/ticket']" routerLinkActive="active">
+        <span>
+          <img *ngIf="!hasRoute('ticket')"  src="assets/img/Mobile/ticket.png" alt="img" class="img-fluid">
+          <img *ngIf="hasRoute('ticket')" src="assets/img/Mobile/ticket-active.png" alt="img" class="img-fluid">
+        </span>
+        <a class="d-block menuMobile"> {{'ticket' | translate}}</a>
+      </div>
+      <div  class="menuMobile" [routerLink]="['/cart']" routerLinkActive="active">
+        <span>
+          <img *ngIf="!hasRoute('cart')"    src="assets/img/Mobile/Cart.png" alt="img" class="img-fluid">
+          <img *ngIf="hasRoute('cart')"  src="assets/img/Mobile/Cart-active.png" alt="img" class="img-fluid">
+
+        </span>
+        <a class="d-block menuMobile" > {{'cart' | translate}}</a>
+        <span class="text-light bg-danger badgeNotifactionMobile">{{cartLength}}</span>
+      </div>
+      <div  class="menuMobile" [routerLink]="['/whishlist']" routerLinkActive="active">
+        <span>
+          <img *ngIf="!hasRoute('whishlist')"  src="assets/img/Mobile/Heart.png" alt="img" class="img-fluid">
+          <img *ngIf="hasRoute('whishlist')"  src="assets/img/Mobile/Heart-active.png" alt="img" class="img-fluid">
+        </span>
+        <a class="d-block menuMobile"> {{'whishlist' | translate}}</a>
+        <span class="text-light bg-danger badgeNotifactionMobile">{{whishlistLength}}</span>
+      </div>
+
+      <div  class="menuMobile" [routerLink]="['/profile']" routerLinkActive="active">
+        <span>
+          <img  *ngIf="getUserImage()" class="profile-img img-fluid" src="{{hostUrlImages + getUserImage()}}" alt="image">
+          <img *ngIf="!getUserImage()"  src="assets/img/Mobile/Profile.png" alt="img" class="img-fluid">
+
+        </span>
+        <a class="d-block menuMobile">{{'profile' | translate}}</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,87 @@
+<notifier-container></notifier-container>
+
+<div dir="{{'dir'| translate}}">
+
+<div class="container loginContainer pt-5">
+  <div class="row justify-content-center align-items-center customFormWidth" >
+    <form [formGroup]="loginForm" class="col-md-4 col-11 py-4 px-3" (ngSubmit)="onSubmit()" novalidate>
+        <h3 class="text-danger text-center my-3">{{'signIn' | translate}}</h3>
+        <div class="form-group">
+            <label class="col-form-label col-form-label-sm">{{'emailAddress' | translate}}</label>
+            <input type="email" autocomplete="on" class="form-control" formControlName="email"
+            [ngClass]="{ 'is-invalid': loginForm.controls.email.invalid  && loginForm.controls.email.touched   }"
+            placeholder="{{'emailAddress' | translate}}"/>
+            <div *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid" class="invalid-feedback">
+                <div *ngIf="loginForm.controls.email.errors?.required" >{{'emailRequired' | translate}}</div>
+                <div *ngIf="loginForm.controls.email.errors?.email" >{{'emailMustValid' | translate}}</div>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="form-group">
+            <label class="col-form-label col-form-label-sm" >{{'password' | translate}}</label>
+            <input type="password"  class="form-control"  formControlName="password"
+                  [ngClass]="{ 'is-invalid': loginForm.controls.password.invalid && loginForm.controls.password.touched}"
+                  placeholder="{{'password' | translate}}" />
+            <div *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid" class="invalid-feedback">
+                    <div *ngIf="loginForm.controls.password.errors?.required" >{{'passwordRequired' | translate}}</div>
+                    <div *ngIf="loginForm.controls.password.errors?.minlength" >{{'passwordCharacters' | translate}}</div>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+
+
+        <div class="forgetPasswordDiv">
+            <a (click)="openVerticallyCentered(content)">{{'forgotPassword' | translate}}</a>
+        </div>
+        <div class="mt-3 text-center">
+            <button class="btn btn-action"   [ladda]="submitted" [disabled]="!loginForm.valid">{{'signIn' | translate}}</button>
+        </div>
+        <p class="text-center mt-3">{{'or' | translate}}</p>
+        <div class="text-center">
+            <span>{{'newMember' | translate}}</span>
+            <a class="font-weight-bold text-dark mx-1" [routerLink]="['/register']" (click)="closeLogin()">{{'registerNow' | translate}}</a>
+        </div>
+    </form>
+  </div>
+</div>
+</div>
+
+
+
+
+<!-- start forget password dialog -->
+<ng-template #content let-modal>
+  <notifier-container></notifier-container>
+
+ <div class="modal-body">
+  <button type="button" class="close rounded-circle bg-white p-2" aria-label="Close" (click)="modal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="container">
+    <form (ngSubmit)="submit()" [formGroup]="forgetPasswordForm"  class="row justify-content-center align-items-center" novalidate>
+      <h5 class="col-12 my-4 text-center" style="color:  #231f20;">{{'forgotPassword' | translate}}</h5>
+      <div class="form-group col-12">
+        <label class="col-form-label col-form-label-sm">{{'emailAddress' | translate}}</label>
+        <input type="email" autocapitalize="on" class="form-control" placeholder="{{'enterEmail' | translate}}" formControlName="email"
+          [ngClass]="{ 'is-invalid': forgetPasswordForm.controls.email.touched &&  forgetPasswordForm.controls.email.invalid}" />
+        <div *ngIf="forgetPasswordForm.controls.email.touched  &&  forgetPasswordForm.controls.email.invalid" class="invalid-feedback">
+          <div *ngIf="forgetPasswordForm.controls.email.errors?.required">
+            {{'emailRequired' | translate}}
+          </div>
+          <div *ngIf="forgetPasswordForm.controls.email.errors?.email">
+            {{'emailMustValid' | translate}}
+          </div>
+        </div>
+      </div>
+      <p class="my-3 col-12 text-center" style="color:  #231f20;">
+        {{'emailParagraphTextForgetPassword' | translate}}
+      </p>
+      <button [disabled]="!forgetPasswordForm.valid"
+        class="btn btn-danger my-3 col-4  text-center">
+        {{'sendEmail' | translate}}
+      </button>
+    </form>
+  </div>
+</div>
+</ng-template>
+<!-- end forget password dialog -->

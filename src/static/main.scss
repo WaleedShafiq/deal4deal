@@ -1,0 +1,30 @@
+html {
+	height: 100% !important;
+	position: relative;
+}
+
+body {
+	position: relative;
+	height: 100% !important;
+	width: 100%;
+}
+
+body.body-right {
+	text-align: right;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+[dir="rtl"] .right {
+	float: left;
+}
+
+.block-ui-wrapper {
+	background: rgba(0, 0, 0, 0.40) !important;
+}

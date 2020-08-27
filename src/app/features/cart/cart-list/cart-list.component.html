@@ -1,0 +1,150 @@
+<div class="container animated fadeIn">
+  <div class="row topTitle">
+      <h2>{{'Cart' | translate}}</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-8 d-none d-md-block d-lg-block" *ngIf="cartItems?.length > 0">
+      <ng-container *ngFor="let item of cartItems let i = index">
+        <div class="mb-3">
+          <div class="row card mb-3 item-card align-items-center">
+            <div class="col-md-3 text-center imageContainer" >
+              <div>
+                <img src="{{hostUrlImages + item.campaign.product.image}}" class="card-img" alt="img">
+                <div class="statusicon">{{item.campaign.status}}</div>
+              </div>
+            </div>
+            <div class="col-md-9 mobileContainer">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <h5 class="card-title">{{item.campaign.product_text}}</h5>
+                  </div>
+                </div>
+                <div class="row align-items-center">
+                  <div class="col-md-8 getChanceMobile text-{{ currentLanguage === 'en'  ?  'left' : 'left'}}">
+                    <span class="Get-a-chance-to-win-">{{'get a chance to win' | translate}}</span>:
+                    <!--                        <strong>{{item.campaign.prize.name}} </strong>-->
+                    <p class="Armor-Blu mb-2">{{item.campaign.prize.name}}</p>
+                  </div>
+                  <div class="col-md-4">
+                    <button *ngIf="!loggin" class="removebtn" (click)="removeItem(item.campaign_id)" type="button">{{'REMOVE' | translate}}</button>
+                    <button *ngIf="loggin" class="removebtn" (click)="removeItem(item.id)" type="button">{{'REMOVE' | translate}}</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 control">
+                    <button class="btn" (click)="changeQuantity(i,'Dec')" [disabled]="item.quantity ==1"><i class="fa fa-minus"></i></button>
+                       <input type="text" [(ngModel)]="item.quantity" (input) ="ItemQuantityChanged(i)" class="item-quantity text-center ml-2 mr-2">
+
+                    <button class="btn" (click)="changeQuantity(i,'Inc')"><i class="fa fa-plus"></i></button>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+          <div class="row card-footer align-items-center justify-content-between">
+            <div class="col-md-3">
+              <img class="ticketimg mr-2" src="assets/img/Path2478.svg">
+              <span class="ticketgroup mr-1 text-center">{{donateFactor}}</span>
+              <span>{{'tickets per unit' | translate}}</span>
+            </div>
+            <div class="col-md-3">
+              <div class=" item-price text-center">
+                <span [ngClass]="{'line': item.campaign.product.offer > 0}" class="orginalprice mr-1">
+                  {{currencyText}} {{getPrice(item.campaign.product.price * item.quantity)}} </span>
+                <span *ngIf="item.campaign.product.offer > 0">{{currencyText}} {{getPrice((item.campaign.product.price - item.campaign.product.offer)*item.quantity)}}</span>
+              </div>
+            </div>
+
+          </div>
+          <!-- </div> -->
+        </div>
+
+
+      </ng-container>
+
+    </div>
+    <div class="col-12 d-block d-md-none d-lg-none containerCartMobile">
+      <div class="row containerCartMobileRow" *ngFor="let item of cartItems; let i = index">
+        <div class="col-5 containerImageMobile">
+          <img src="{{hostUrlImages + item.campaign.product.image}}" class="img-fluid" alt="img">
+          <div class="labelMobile">{{item.campaign.status}}</div>
+        </div>
+        <div class="col-7">
+          <h5>{{item.campaign.product_text}}</h5>
+          <span class="text-muted chanceMobile">{{'get a chance to win' | translate}}</span>
+          <p class="text-danger">{{item.campaign.prize.name}}</p>
+        </div>
+        <div class="col-12 pt-2">
+          <div class="row justify-content-around align-items-center">
+            <button class="btn btn-outline-dark" (click)="changeQuantity(i,'Dec')" [disabled]="item.quantity ==1"><i class="fa fa-minus"></i></button>
+            <input type="text" [(ngModel)]="item.quantity" (input) ="ItemQuantityChanged(i)" class="text-center inputQuantityMobile">
+            <button class="btn btn-outline-dark" (click)="changeQuantity(i,'Inc')"><i class="fa fa-plus"></i></button>
+            <div>
+              <button *ngIf="!loggin" class="btn btn-outline-dark" (click)="removeItem(item.campaign_id)" type="button">{{'REMOVE' | translate}}</button>
+              <button *ngIf="loggin" class="btn btn-outline-dark" (click)="removeItem(item.id)" type="button">{{'REMOVE' | translate}}</button>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-12 pt-2">
+          <div class="row align-items-center justify-content-between">
+            <div>
+              <img class="ticketimg mr-2" src="assets/img/Path2478.svg">
+              <span class="ticketgroup mr-1 text-center">{{donateFactor}}</span>
+              <span>{{'tickets per unit' | translate}}</span>
+            </div>
+
+              <div class="text-center p-2 priceProductMobile rounded-lg">
+                <span [ngClass]="{'line': item.campaign.product.offer > 0}" class="orginalprice mr-1">
+                  {{currencyText}} {{getPrice(item.campaign.product.price * item.quantity)}} </span>
+                <span *ngIf="item.campaign.product.offer > 0">{{currencyText}} {{getPrice((item.campaign.product.price - item.campaign.product.offer)*item.quantity)}}</span>
+              </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4" *ngIf="cartItems?.length > 0">
+      <div class="summary">
+        <div class="total mb-5">{{'total' | translate}}</div>
+        <div class="items-details">
+          <span class="text-{{ currentLanguage === 'en'  ?  'right' : 'left'}}">{{'total-product' | translate}}</span>
+          <span class="float-{{ currentLanguage === 'en'  ?  'right' : 'left'}}">{{cartItems?.length}}</span>
+        </div>
+        <div class="items-details">
+          <span class="text-{{ currentLanguage === 'en'  ?  'right' : 'left'}}">{{'total-ticket' | translate}}</span>
+          <span class="float-{{ currentLanguage === 'en'  ?  'right' : 'left'}}">{{cartItems?.length * donateFactor}}</span>
+        </div>
+        <div class="items-details">
+          <span class="text-{{ currentLanguage === 'en'  ?  'right' : 'left'}}">{{'grand-total'| translate}}</span>
+          <span class="float-{{ currentLanguage === 'en'  ?  'right' : 'left'}}">{{getTotal()}} {{currencyText}} </span>
+        </div>
+        <div class="mt-5 mb-5">
+          <span>{{'will-earn' | translate}}</span>
+        </div>
+        <div class="mt-5 text-center donate">
+          <img src="assets/img/Group464.png">
+          <div class="mt-5">
+            <button class="btn {{ currentLanguage === 'en'  ?  'mr-4' : 'ml-4'}}" (click)="Donate(true)" [ngClass]="{'happybtn': isDonate, 'sadbtn':!isDonate}"><i class="fa fa-smile mr-1"></i>
+              {{'ydonat' | translate}}</button>
+            <button class="btn" (click)="Donate(false)" [ngClass]="{'happybtn': !isDonate, 'sadbtn':isDonate}"><i class="fa fa-frown mr-1"></i>
+              {{'donat'| translate}}</button>
+          </div>
+        </div>
+        <div class="mt-5">
+          <button class="btn nextbtn" type="button" (click)="Next()">{{'next' | translate}}</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div  *ngIf="cartItems?.length == 0">
+    <app-empty-cart></app-empty-cart>
+  </div>
+</div>
+

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Cairo&display=swap');
+
+p.title {
+  color: #231F20;
+  line-height: 40px;
+  text-align: justify;
+
+  font-size: 25px;
+}
+
+
+p {
+  color: #231F20;
+  line-height: 40px;
+  text-align: justify;
+
+  font-size: 20px;
+}
+
+@media (max-width: 990px) {
+  .allPage {
+    padding-top:  0 !important;
+  }
+  p {
+    line-height: 36px;
+    font-size: 18px;
+  }
+}

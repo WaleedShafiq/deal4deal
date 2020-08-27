@@ -1,0 +1,40 @@
+@import "../../../../styles";
+.main-d{
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+}
+.money{
+  color: $pinkish-red;
+}
+.code{
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: 0.28px;
+  text-align: center;
+  color: #777777;
+
+}
+.l-p{
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.27;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #777777;
+}
+.code-1{
+  width: 165px;
+  object-fit: contain;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  border: none;
+}
+.code-1:focus {
+  outline: none;
+}

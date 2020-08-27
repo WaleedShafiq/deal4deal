@@ -1,0 +1,62 @@
+@import 'color.scss';
+
+.progress{
+  // width: 70%;
+  height: 7px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  .closingProgress{
+    animation-name: closing-soon;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+// .exploreProgress {
+//   transition: stroke .2s ease-out;
+//   transform:translateX(100px);
+// }
+
+.exploreProgress{
+  transition: width 2s;
+}
+.exploreProgress:hover {
+  width: 90%;
+}
+
+@keyframes closing-soon {
+  0%, 100% {
+      left: 0;
+      opacity: 0;
+  }
+  50% {
+      left: 0;
+      opacity: 1;
+  }
+  }
+  // .progress-bar{
+  //   border-radius: 3px;
+  //   transition: customAnimation .2s ease-out;
+  // }
+
+  // .closingProgress {
+  //   width: 90%;
+  // }
+  // .exploreProgress {
+  //   width: 20%;
+  // }
+  // .soldProgress {
+  //   width: 100%;
+  // }
+}
+
+
+// .bar {
+//   background-color: blueviolet;
+//   height: 100%;
+// }
+// :host {
+//   display: block;
+//   height: 100%;
+// }

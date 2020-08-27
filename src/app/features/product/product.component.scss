@@ -1,0 +1,82 @@
+@import 'layout';
+.sectionButtonsFilter {
+    .buttonsFilter {
+      padding: 0 10px;
+        button.btn {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 150px;
+        }
+        button.btn:hover {
+            animation: .9s customAnimation;
+            color: $redColor;
+        }
+        button.active {
+            color: $redColor;
+            background-color: $whiteColor;
+            box-shadow: 0 4px 10px 0 $redColor !important;
+            pointer-events: none;
+            align-items: center;
+        }
+    }
+}
+
+
+
+::ng-deep #productPageCarousel .owlCarouselCampagin {
+    direction: ltr !important;
+}
+
+::ng-deep #productPageCarousel .owl-theme .owl-nav {
+    margin-top: 0;
+    position: relative;
+    bottom: 265px;
+    display: flex;
+    justify-content: space-between;
+    height: 55px;
+}
+
+::ng-deep #productPageCarousel .owl-theme .owl-nav .owl-prev,
+::ng-deep #productPageCarousel .owl-theme .owl-nav .owl-next {
+    color: $whiteColor;
+    font-size: 15px;
+    margin: 0px;
+    padding: 16px 7px 18px 9px;
+    background: $blackColor;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+::ng-deep #productPageCarousel .owl-theme .owl-nav .disabled {
+    background: #D6D6D6;
+}
+
+@media (max-width: 990px) {
+  ::ng-deep #productPageCarousel .owl-theme .owl-nav {
+    display: none !important;
+}
+
+.sectionButtonsFilter{
+  h3 {
+    font-size: 22px;
+}
+}
+.sectionButtonsFilter {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+    div.buttonsFilter {
+      margin-top: 0 !important;
+        button {
+            width: 100% !important;
+            font-size: 12px;
+        }
+    }
+}
+// @media (max-width: 990px) {
+//   .buttonsFilter {
+//       button.btn {
+//           width: 265px;
+//       }
+//   }
+// }

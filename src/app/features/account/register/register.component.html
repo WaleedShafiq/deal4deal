@@ -1,0 +1,216 @@
+<div dir="{{'dir'| translate}}">
+  <notifier-container></notifier-container>
+  <div class="container pt-5">
+    <div class="row justify-content-center">
+      <div class="col-8 px-2 pb-4">
+        <h5 style="color: #231f20;">{{'registeration' | translate}}</h5>
+      </div>
+    </div>
+    <div class="row justify-content-center px-2">
+      <div class="col-md-8 col-12 containerRegisterForm p-5">
+        <form #frm="ngForm" novalidate>
+          <div class="form-row align-items-center ">
+            <div class="col-12">
+              <h5 class="text-center mb-5">{{'register' | translate}}</h5>
+            </div>
+            <div class="form-group col-md-6 col-12" [ngClass]="{ 'invalid-data': frm.submitted && !firstName.valid }">
+              <label for="firstName" class="col-form-label col-form-label-sm required">
+                {{'firstName' | translate}}
+              </label>
+              <input type="text" class="form-control" id="firstName" name="firstName"
+                [(ngModel)]="credential.first_name" #firstName="ngModel"  minlength="4" required>
+              <small *ngIf="frm.submitted && firstName.errors?.required" class="invalid-text">
+                {{'firstNamRequired' | translate}}
+              </small>
+              <small *ngIf="frm.submitted && firstName.errors?.minlength" class="invalid-text">
+                {{'firstNameLength' | translate}}
+              </small>
+              <small class="text-success" *ngIf="frm.submitted && firstName.valid">
+                &nbsp;
+              </small>
+            </div>
+
+            <div class="form-group col-md-6 col-12" [ngClass]="{ 'invalid-data': frm.submitted && !lastName.valid }">
+              <label for="lastName" class="col-form-label col-form-label-sm required">
+                {{'lastName' | translate}}
+              </label>
+              <input type="text" class="form-control" minlength="4" id="lastName" name="lastName" [(ngModel)]="credential.last_name"
+                #lastName="ngModel" required>
+              <small *ngIf="frm.submitted && lastName.errors?.required" class="invalid-text">
+                {{'lastNameRequired' | translate}}
+              </small>
+              <small *ngIf="frm.submitted && lastName.errors?.minlength" class="invalid-text">
+                {{'lastNameLength' | translate}}
+              </small>
+              <small class="text-success" *ngIf="frm.submitted && lastName.valid">
+                &nbsp;
+              </small>
+            </div>
+
+            <div class="form-group col-12" [ngClass]="{ 'invalid-data': frm.submitted && !Email.valid }">
+              <label class="col-form-label col-form-label-sm required">
+                {{'email'| translate}}
+              </label>
+              <input type="text" class="form-control" name="Email" [(ngModel)]="credential.email" #Email="ngModel" email
+                required>
+              <small *ngIf="frm.submitted && Email.hasError('required')" class="invalid-text">
+                {{'emailRequired'| translate}}
+              </small>
+              <small *ngIf="frm.submitted && Email.errors?.email  && !Email.hasError('required')" class="invalid-text">
+                {{'emailValidation'| translate}}
+              </small>
+              <small class="text-success" *ngIf="frm.submitted && Email.valid">
+                &nbsp;
+              </small>
+            </div>
+
+            <div class="col-md-5 col-12" [ngClass]="{'invalid-data': frm.submitted && !countryCode.valid }">
+              <label for="countryCode" class="col-form-label col-form-label-sm required">
+                {{'countrycode' | translate}}
+              </label>
+              <div class="overflow-box form-group" [ngClass]="{'invalid-data': frm.submitted && !countryCode.valid }">
+                <ng-select name="countryCode" class="form-control p-0 " [(ngModel)]="credential.country_id"
+                  #countryCode="ngModel" required>
+                  <ng-option *ngFor="let country of countriesList" [value]="country.id">
+                    <img src="https://deal4deal.app/deal4deal_backend/public/{{country.image}}" width="20px"
+                      height="20px" />
+                    {{country.name}} {{country.countryKey}}
+                  </ng-option>
+                </ng-select>
+                <small *ngIf="frm.submitted && !countryCode.valid" class="invalid-text">
+                  {{'countrycodeRequired' | translate}}
+                </small>
+                <small class="text-success" *ngIf="frm.submitted && countryCode.valid">
+                    &nbsp;
+                </small>
+              </div>
+            </div>
+
+            <div class="form-group col-md-4 col-12" [ngClass]="{ 'invalid-data': frm.submitted && !PhoneNumber.valid }">
+              <label class="col-form-label col-form-label-sm required">{{'phoneNumber'| translate}}</label>
+              <input type="text" class="form-control" name="PhoneNumber" [(ngModel)]="credential.phone_number"
+                #PhoneNumber="ngModel"
+                pattern="^\s*(?:\+?\d{1,3})?[- (]*\d{3}(?:[- )]*\d{3})?[- ]*\d{4}(?: *[x/#]\d+)?\s*$" required>
+              <small *ngIf="frm.submitted && PhoneNumber.hasError('required')" class="invalid-text">
+                {{'phoneNumberRequired'| translate}}
+              </small>
+              <small *ngIf="frm.submitted && PhoneNumber.hasError('pattern') && !PhoneNumber.hasError('required')"
+                class="invalid-text">
+                {{'invalidPhoneNumber'| translate}}
+              </small>
+              <small class="text-success" *ngIf="frm.submitted && PhoneNumber.valid">
+                  &nbsp;
+              </small>
+            </div>
+
+
+            <div class="form-group col-md-3 col-12">
+              <label class="col-form-label col-form-label-sm d-block">&nbsp;</label>
+              <button type="button" class="btn btn-danger verifyButton" (click)="verifyNumber()">
+                {{'verifyNow' | translate}}
+              </button>
+              <small *ngIf="frm.submitted">
+                &nbsp;
+              </small>
+            </div>
+
+
+
+
+            <div class="col-12 form-group" [ngClass]="{ 'invalid-data': frm.submitted && !password.valid }">
+              <label for="password" class="col-form-label col-form-label-sm required">
+                {{'password'| translate}}
+              </label>
+              <input type="password" class="form-control" id="password" name="password"
+                [(ngModel)]="credential.password" #password="ngModel" minlength="8" required>
+              <small *ngIf="frm.submitted && password.hasError('required')" class="invalid-text">
+                {{'passwordRequired' | translate}}
+              </small>
+              <small *ngIf="frm.submitted && password.hasError('minlength') && !password.hasError('required')" class="invalid-text">
+                {{'passwordCharacters' | translate}}
+              </small>
+              <small class="text-success" *ngIf="frm.submitted && password.valid">
+                  &nbsp;
+              </small>
+              <!-- <small *ngIf="frm.submitted && password.hasError('min') && !password.hasError('required')"
+                class="invalid-text">
+
+                {{'passwordCharacters' | translate}}
+              </small> -->
+            </div>
+
+<!--  {{'minchar'| translate}} -->
+            <div class="form-group col-12" [ngClass]="{ 'invalid-data': frm.submitted && !confirmPassword.valid }">
+              <label for="confirmPassword" class="col-form-label col-form-label-sm required">
+                {{'confirmPassword' | translate}}
+              </label>
+              <input type="password" class="form-control"  name="confirmPassword"
+                [(ngModel)]="credential.password_confirmation" #confirmPassword="ngModel" [equalTo]="password"
+                required />
+              <small *ngIf="frm.submitted && confirmPassword.hasError('required')" class="invalid-text">
+                {{'confirmPasswordRequired' | translate}}
+              </small>
+              <small *ngIf="frm.submitted && !confirmPassword.valid && !confirmPassword.hasError('required')"
+                class="invalid-text ">
+                {{'passswordConfirmPasswordMatch' | translate}}
+              </small>
+              <small class="text-success" *ngIf="frm.submitted && confirmPassword.valid">
+                &nbsp;
+              </small>
+
+            </div>
+
+            <div class="form-group col-12" >
+              <label for="invitationCode" class="col-form-label col-form-label-sm required">
+                {{'invitationCode' | translate}}
+              </label>
+              <input type="text" class="form-control" id="invitationCode" name="invitationCode"
+                [(ngModel)]="credential.invitationCode">
+            </div>
+
+
+
+
+              <div class="col-12"
+              [ngClass]="{ 'invalid-data': frm.submitted && !acceptConditions.valid }">
+              <div class="row justify-content-center align-items-center ">
+                <!-- <div class="col-1 ">
+                  <input type="checkbox"  id="acceptConditions" name="acceptConditions"
+                  [(ngModel)]="credential.acceptConditions" #acceptConditions="ngModel" required>
+                      <span  class="checkmark"  ></span>
+                </div> -->
+                <label class="col-12 customCheckBox">
+                  <input type="checkbox"  id="acceptConditions" name="acceptConditions"
+                  [(ngModel)]="credential.acceptConditions" #acceptConditions="ngModel" required>
+                  <span  class="checkmark"  ></span>
+                  <label for="acceptConditions" class="px-5">
+                    <a class="d-block accept">{{'signingAggreement' | translate}}</a>
+                    <a class="mx-1 font-weight-bold">{{'credentialAggreement' | translate}}</a>
+                    <a class="mx-1 font-weight-bold">{{'privacyPolicy' | translate}}</a>
+                    <a class="mx-1">{{'and' | translate}} </a>
+                    <a class="font-weight-bold">{{'drawTermConditions' | translate}} </a>
+                  </label>
+                <small *ngIf="frm.submitted && !acceptConditions.valid" class="d-block invalid-text">
+                  {{'acceptConditionsRequired' | translate}}
+                </small>
+                <small class="d-block text-success" *ngIf="frm.submitted && acceptConditions.valid">
+                  &nbsp;
+                </small>
+                </label>
+              </div>
+
+
+
+            </div>
+
+            <div class="col-12 text-center mt-4">
+              <button type="submit" class="btn btn-sm btn-danger py-2 px-5" [ladda]="submitted" (click)="Save(frm)">
+                {{'register' | translate}}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

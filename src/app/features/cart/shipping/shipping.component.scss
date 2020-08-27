@@ -1,0 +1,74 @@
+.Rectangle-1857 {
+    width: 726px;
+    height: 513px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+    margin-left: 14px;
+    margin-bottom: 100px;
+    margin-top: 24px;
+  }
+
+   .ddl{
+    width: 315px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+   }
+
+
+
+  .fontColor{
+      color: rgb(155, 152, 152);
+  }
+
+  textarea{
+    width: 529px;
+    height: 186px;
+    border-radius: 7px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+    border-color: transparent;
+  }
+
+  .nextbtn{
+    width: 327px;
+  height: 52px;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px 0 rgba(236, 35, 38, 0.4);
+  background-color: #ec2326;
+  color: white;
+  }
+
+
+.shipping{
+  font-family: Cairo;
+  font-size: 25px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.96;
+  letter-spacing: normal;
+  color: #231f20;
+}
+
+
+
+.Rectangle-14 {
+  width: 679px;
+  height: 185px;
+  margin-top: 48px;
+  border-radius: 5px;
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+}
+@media(max-width:700px){
+  .Rectangle-14,
+  .nextbtn{
+    width: 300px;
+  }
+  .Rectangle-1857{
+    width: 350px;
+  }
+}
+

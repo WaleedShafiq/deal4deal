@@ -1,0 +1,132 @@
+@import "../../../../styles";
+.fa-arrow-left{
+  font-size: 23px;
+  object-fit: contain;
+  opacity: 0.7;
+}
+.main-f{
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  border-radius: 7px;
+}
+.l-img{
+  width: 36px;
+  height: 28.8px;
+  object-fit: contain;
+}
+.name{
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #231f20;
+}
+.price{
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #8b9dff;
+}
+.product-img{
+  width: 55px;
+  height: 65px;
+  object-fit: contain;
+  border-radius: 24px;
+}
+.u-name{
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #231f20;
+}
+.offer-txt{
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.64;
+  letter-spacing: normal;
+  text-align: left;
+  color: #777777;
+}
+.ms{
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: center;
+  color: #777777;
+}
+.rest{
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #231f20;
+}
+.red-custom{
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: $pinkish-red;
+}
+.average{
+  position: relative;
+  height: 11px;
+  background-color: rgba(35, 31, 32, 0.16);
+  border-radius: 6px;
+}
+.inner-average{
+  width: 75%;
+  height: 11px;
+  background-color: #e57273;
+  border-radius: 6px;
+  position: absolute;
+}
+.not-active{
+  background: #000;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  border-radius: 50%;
+  top: 10px;
+  left: 30px;
+}
+.active{
+  background: green;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  border-radius: 50%;
+  top: 10px;
+  left: 30px;
+}
+@media (max-width: 1200px) {
+  //.l-img{
+  //  width: 20px;
+  //  height: 20.8px;
+  //}
+  //.act{
+  //  font-size: 12px;
+  //}
+}

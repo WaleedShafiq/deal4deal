@@ -1,0 +1,165 @@
+<div class="containerHeader d-md-blok d-lg-block d-none">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg row pb-0">
+      <a class="navbar-brand d-block d-md-none d-lg-none" [routerLink]="['/campaign']" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        <img src="assets/img/logo.png" alt="img" class="img-fluid logo">
+      </a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarToggle"
+        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between pb-2" id="navbarToggle">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <div class="containerSelectCurrencywithLabel">
+              <span class="mx-1 currencySpan"> {{'currency' | translate}}</span>
+              <ng-select bindLabel="name" appendTo="body" [searchable]="false" [addTagText]="true" [clearable]="false"
+                placeholder="{{'selectCurrency' | translate}}" [(ngModel)]="currencyId"
+                (change)="changeCurrency($event)" class="currencySelect">
+                <ng-option *ngFor="let cur of currencyData" [value]="cur.id">
+                  {{cur.name}}
+                </ng-option>
+              </ng-select>
+            </div>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav rightLinks p-0">
+          <li class="nav-item px-2 cartInNavbar" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <span class="mx-1" id="changeLanguages">
+              <a *ngIf="language === 'en'" (click)="ChangeLanguage('ar')" class="customLink">{{'lang'| translate}}</a>
+              <a *ngIf="language === 'ar'" (click)="ChangeLanguage('en')" class="customLink">{{'lang'| translate}}</a>
+            </span>
+          </li>
+          <li class="nav-item px-2 " data-toggle="collapse" data-target=".navbar-collapse.show">
+            <span class="mx-1  d-sm-inline help" routerLink="/help" [routerLinkActiveOptions]="{ exact: true }"
+              routerLinkActive="active">
+              {{'helpCenter' | translate}}
+            </span>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<div class="containerHeaderMobile d-md-none fixed-top d-lg-none d-block"
+  [ngStyle]="{'height': customExpandedMobile === false? '': '100%'}">
+  <div class="container bg-white">
+    <nav class="navbar navbar-expand-lg  row pb-0 Mobile">
+
+      <a class="navbar-brand d-block d-md-none d-lg-none" [routerLink]="['/campaign']" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        <img src="assets/img/logo.png" alt="img" class="img-fluid logo">
+      </a>
+
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarToggle"
+        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation"
+        (click)="expandMenuToScroll()">
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between pb-2" id="navbarToggle">
+        <ul class="navbar-nav px-0 linksMobile">
+          <li class="mt-4 pb-2" *ngIf="!isLogin" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <span>{{'started' | translate}}</span>
+            <button class="d-md-none d-lg-none btn btn-danger px-5" routerLink="/login">{{'login' | translate}}
+            </button>
+          </li>
+          <li class="mt-4 pb-2" (click)="logOut()" *ngIf="isLogin" data-toggle="collapse"
+            data-target=".navbar-collapse.show">
+            <button class="d-md-none d-lg-none btn btn-danger px-5">{{'logout' | translate}}
+            </button>
+          </li>
+          <h3 class="pb-2 pt-3 mb-0 mainTitle">{{'settings' | translate}}</h3>
+          <li class="nav-item py-2 border-bottom" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <span>{{'language' | translate}}</span>
+            <span class="mx-1" id="changeLanguagesMobile">
+              <a *ngIf="language === 'en'" (click)="ChangeLanguage('ar')"
+                class="customLink text-danger">{{'lang'| translate}}</a>
+              <a *ngIf="language === 'ar'" (click)="ChangeLanguage('en')"
+                class="customLink text-danger">{{'lang'| translate}}</a>
+            </span>
+          </li>
+          <li class="nav-item py-2 border-bottom">
+            <span class="mx-1 text-dark currencySpanMobile"> {{'currency' | translate}}</span>
+            <ng-select bindLabel="name" appendTo="body" [searchable]="false" [clearable]="false"
+              placeholder="{{'selectCurrency' | translate}}" [(ngModel)]="currencyId" (change)="changeCurrency($event)"
+              class="currencySelectMobile">
+              <ng-option *ngFor="let cur of currencyData" [value]="cur.id">
+                {{cur.name}}
+              </ng-option>
+            </ng-select>
+          </li>
+          <h3 class="pb-2 pt-3 mb-0">{{'general' | translate}}</h3>
+          <li class="nav-item py-2 border-bottom" routerLink="/work" [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <span class="mx-1  d-sm-inline">
+              {{'howItWorks' | translate}}
+            </span>
+          </li>
+          <li class="nav-item py-2 border-bottom" routerLink="/products" [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <span class="mx-1  d-sm-inline">
+              {{'products' | translate}}
+            </span>
+          </li>
+          <li class="nav-item py-2 border-bottom" routerLink="/help" [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <span class="mx-1  d-sm-inline">
+              {{'helpCenter' | translate}}
+            </span>
+          </li>
+          <li class="nav-item py-2 border-bottom" routerLink="/charity" [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <span class="mx-1  d-sm-inline">
+              {{'charities' | translate}}
+            </span>
+          </li>
+          <li class="nav-item py-2 " data-toggle="collapse" data-target=".navbar-collapse.show">
+            <a href="tel:+971547744650" class="btn px-5 py-2 contactButton">{{'callUs' | translate}}</a>
+            <a href="mailto:support@deal4deal.app" class="btn px-5 py-2 contactButton">{{'emailUs' | translate}}</a>
+          </li>
+          <li class="icon-bar-social mt-3 py-2 ">
+            <a href="{{instgram}}" target="_blank" class="instgram">
+              <i class="fab fa-instagram "></i>
+            </a>
+            <a href="{{linkedIn}}" target="_blank" class="linkedin">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="{{facebook}}" target="_blank" class="facebook">
+              <i id="cog" class="fab fa-facebook-f"></i>
+            </a>
+            <a href="{{twitter}}" target="_blank" class="twitter">
+              <i id="cog" class="fab fa-twitter"></i>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=+971547744650" target="_blank" class="whatsApp">
+              <i id="cog" class="fab fa-whatsapp"></i>
+            </a>
+          </li>
+          <li class="nav-item py-3 border-bottom powerLinks" routerLink="/terms"
+            [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" data-toggle="collapse"
+            data-target=".navbar-collapse.show">
+            <span class="mx-1  d-sm-inline">
+              {{'termsConditions' | translate}}
+            </span>
+          </li>
+          <li class="nav-item py-3 powerLinks" routerLink="/faqs" [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <span class="mx-1  d-sm-inline">
+              {{'faqs' | translate}}
+            </span>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>

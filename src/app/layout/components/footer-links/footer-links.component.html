@@ -1,0 +1,40 @@
+<div class="bg-gray footerLinksContainer">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-3 col-12 ">
+          <h5 class=" footerAnchor font-weight-bold">{{'quickLinks' | translate}}</h5>
+          <a class=" footerAnchor py-2" [routerLink]="['/profile']"> {{'myAccount' | translate}}</a>
+          <a class=" footerAnchor py-2" [routerLink]="['/campaign']">{{'Campagines' | translate}}</a>
+          <a class=" footerAnchor py-2" [routerLink]="['/products']"> {{'products' | translate}}</a>
+        </div>
+
+        <div class="col-md-3 col-12">
+          <h5 class="footerAnchor font-weight-bold">{{'Campagines' | translate}}</h5>
+          <a class=" footerAnchor py-2" [routerLink]="['/products']">{{'all' | translate}}</a>
+          <a class=" footerAnchor py-2" [routerLink]="['/products']">{{'auto' | translate}}</a>
+          <a class=" footerAnchor py-2" [routerLink]="['/products']">{{'lifeStyle' | translate}}</a>
+          <a class=" footerAnchor py-2" [routerLink]="['/products']">{{'cash' | translate}}</a>
+        </div>
+
+        <div class="col-md-3 col-12">
+          <h5 class="footerAnchor font-weight-bold">{{'service' | translate}}</h5>
+          <a class=" footerAnchor py-2" routerLink="/help">{{'contactUs' | translate}}</a>
+          <a class=" footerAnchor py-2" routerLink="/faqs">{{'faqs' | translate}}</a>
+          <a class=" footerAnchor py-2" routerLink="/work">{{'howItWorks' | translate}}</a>
+          <a class=" footerAnchor py-2" [routerLink]="['/charity']">{{'charities' | translate}}</a>
+          <a class=" footerAnchor py-2" [routerLink]="['/terms']">{{'termsConditions' | translate}}</a>
+        </div>
+
+        <div class="col-md-3 col-12">
+          <a class=" footerAnchor py-2">
+            <a class="d-inline font-weight-bold">{{'callUsNow' | translate}}</a>
+          </a>
+          <a class=" footerAnchor emailLink py-2">support@deal4deal.app</a>
+          <img src="assets/img/appbutton.png" alt="img" class="img-fluid py-1 appStore">
+          <img src="assets/img/googlePlayButton.png" alt="img" class="img-fluid appStore">
+
+        </div>
+      </div>
+    </div>
+</div>
+

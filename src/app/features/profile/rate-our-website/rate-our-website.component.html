@@ -1,0 +1,35 @@
+<div class="container py-3 mt-4 animated fadeIn">
+  <div class="d-flex py-5 title">
+    <h4><i class=" d-none d-md-inline-block d-lg-inline-block px-2  fa fa-arrow-left" routerLink="/profile"></i>{{'Rate our App' | translate}}</h4>
+  </div>
+  <div class="col-sm-12 d-flex justify-content-center align-items-center">
+    <div class="d-flex align-items-center py-5 main-f col-sm-12 flex-column">
+      <div class="d-flex justify-content-center align-items-center flex-column">
+        <p class="txt-value">{{'Please take a few moments to rate our website' | translate}}</p>
+      </div>
+      <!--     //////////////////////////////////////////////////////////////////////////////////////////////-->
+      <div class="d-flex justify-content-between align-items-center col-sm-5 my-2 main-f stars">
+        <div class="d-flex my-5 mx-2">
+          <i class="fa fa-star " [ngClass]="{'full': rate <= 5 && rate > 0}" (click)="rateOurApp(1)"></i>
+        </div>
+        <div class="d-flex my-5 mx-2">
+          <i class="fa fa-star " [ngClass]="{'full': rate <= 5 && rate > 1}" (click)="rateOurApp(2)"></i>
+        </div>
+        <div class="d-flex my-5 mx-2">
+          <i class="fa fa-star " [ngClass]="{'full': rate <= 5 && rate > 2}" (click)="rateOurApp(3)"></i>
+        </div>
+        <div class="d-flex my-5 mx-2">
+          <i class="fa fa-star " [ngClass]="{'full': rate <= 5 && rate > 3}" (click)="rateOurApp(4)"></i>
+        </div>
+        <div class="d-flex my-5 mx-2">
+          <i class="fa fa-star " [ngClass]="{'full': rate <= 5 && rate > 4}" (click)="rateOurApp(5)"></i>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center align-items-center col-sm-12 my-2 mt-3 flex-column">
+        <p *ngIf="asyncSuccessMessage" class="alert alert-success">{{asyncSuccessMessage}}</p>
+        <p *ngIf="asyncErrorMessage" class="alert alert-danger">{{asyncErrorMessage}}</p>
+        <button class="btn btn-action" [ladda]="loading" (click)="submit()">{{'Submit' | translate}}</button>
+      </div>
+      </div>
+  </div>
+</div>

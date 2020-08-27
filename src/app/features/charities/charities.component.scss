@@ -1,0 +1,59 @@
+@import 'layout';
+p.mainTitleCharitiesPage {
+    font-size: 25px;
+}
+
+.backgroundImage {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 210px;
+    opacity: 0.8;
+    h1 {
+        font-size: 37px;
+    }
+    .containerButton {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+div.description {
+    word-break: break-word;
+    text-align: justify;
+    line-height: 37px;
+    font-size: 18px;
+}
+
+.text-gray {
+    color: gray;
+}
+
+.sectionFooterLinks {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+@media (max-width: 990px) {
+  .container {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+.containerButton {
+  justify-content: center !important;
+}
+p.mainTitleCharitiesPage{
+  font-size: 20px;
+}
+
+div.description {
+  line-height: 32px;
+  font-size: 15px;
+}
+
+button.btn-danger{
+  font-size: 15px;
+  padding: 5px 14px !important;
+}
+}

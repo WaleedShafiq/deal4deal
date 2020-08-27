@@ -1,0 +1,103 @@
+<div class="container animated fadeIn col-10">
+
+    <div class="row mb-5">
+        <h4>{{'ORDER' | translate}}</h4>
+    </div>
+    <div class="row">
+        <!-- <div class="col-sm-12 d-flex justify-content-center align-items-center mt-4"> -->
+        <div class="col-sm-7 p-4 main-f mb-4">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="order-title">{{'PAYMENT OPTIONS' | translate}}</p>
+                    <p class="divider"></p>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <form class="col-sm-12">
+                    <div class="row pl-2">
+                        <div class="col-sm-4 d-flex" *ngFor="let pm of paymentMethods">
+                            <input [checked]="selectedPaymentMethodName == pm.name" (change)="selectMethodChange(pm.id, pm.name)" class="mx-1" type="radio" id="pm.id"
+                                name="pm.name" value="pm">
+                            <img class="credit-card mx-1" src="{{hostUrlImages + pm.mobile_icon}}">
+                            <label class="mx-1  c-l" for="pm.name">{{currentLanguage =='en'?pm.name_en:pm.name_ar}}</label>
+                        </div>
+                        <!-- <div class="col-sm-4">
+                            <input [checked]="selectedMethod === 'dream_points'" (change)="selectMethodChange(1)" class="mx-1" type="radio"
+                                id="dream_points" name="dream_points" value="dream_points">
+                            <img class="dream_points mx-1" src="../../../../assets/img/shipping.svg">
+                            <label class="mx-1 pt-2 c-l" for="dream_points">Dream points </label>
+                            <p class="info">{{'You can use your available' | translate}}</p>
+                        </div> -->
+                    </div>
+                </form>
+            </div>
+           <div class="row">
+               <div class="col-sm-12 table-responsive">
+                   <table class="table">
+                       <thead class="thead-light">
+                           <tr>
+                               <th scope="col"></th>
+                               <th scope="col">{{'Card number' | translate}}</th>
+                               <th scope="col">{{'name' | translate}}</th>
+                               <th scope="col">{{'Expires' | translate}}</th>
+                               <th scope="col">CVC*</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr>
+                                <th scope="row">
+                                    <input class="mx-1" type="radio">
+                                </th>
+                               <td>
+                                   <div>
+                                       <img src="assets/img/master.png">
+                                       <span> ****7106</span>
+                                   </div>
+                               </td>
+                               <td>Jaasir el zahra</td>
+                               <td>05/2023</td>
+                               <td>***</td>
+                           </tr>
+
+                       </tbody>
+                   </table>
+               </div>
+           </div>
+            <div class="row">
+                <span class="col-md-12 btn text-right px-4" style="color:#ec2326" routerLink="/cart/order/{{addressId}}"><a>{{'newCart' | translate}}</a></span>
+            </div>
+        </div>
+        <div class="col-sm-4 main-f mx-4  p-3 ">
+            <p class="header text-{{ currentLanguage === 'en'  ?  'right' : 'left'}}">{{'total' | translate}}</p>
+            <div class="d-flex justify-content-between">
+                <p class="col-sm-6 details text-{{ currentLanguage === 'en'  ?  'right' : 'left'}}">{{'total-product' | translate}}</p>
+                <p class="col-sm-6 details text-right">{{cartItems.length}}</p>
+            </div>
+            <div class="d-flex justify-content-between">
+                <p class="col-sm-6 details text-{{ currentLanguage === 'en'  ?  'right' : 'left'}}">{{'total-ticket' | translate}}</p>
+                <p class="col-sm-6 details text-right">{{cartItems?.length * donateFactor}}</p>
+            </div>
+            <div class="d-flex justify-content-between">
+                <p class="col-sm-6 details text-{{ currentLanguage === 'en'  ?  'right' : 'left'}}">{{'Shippment' | translate}}</p>
+                <p class="col-sm-6 details text-right">{{getPrice(shippingValue)}}</p>
+            </div>
+            <div class="d-flex justify-content-between">
+                <p class="col-sm-6 details text-{{ currentLanguage === 'en'  ?  'right' : 'left'}}">{{'Taxs' | translate}}</p>
+                <p class="col-sm-6 details text-right">{{getTaxes()}}</p>
+            </div>
+            <div class="d-flex justify-content-between">
+                <p class="col-sm-6 details text-{{ currentLanguage === 'en'  ?  'right' : 'left'}}">{{'grand-total'| translate}}</p>
+                <p class="col-sm-6 details text-right">{{currencyText}} {{getTotal() + getTaxes() + getPrice(shippingValue)}}</p>
+            </div>
+            <div class="col-sm-12 my-3">
+                <!-- <p class="msg"><span class="dollar">$</span> you will earn<span class="red">50 dream points
+                        </span>from this purchase</p> -->
+                <span>{{'will-earn' | translate}}</span>
+            </div>
+            <div class="col-sm-12 my-5">
+                <button class="btn btn-action btn-block" (click)="submitOrder()" [disabled]="!selectedPaymentMethodName">{{'ORDER' | translate}}</button>
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+</div>

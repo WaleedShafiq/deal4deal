@@ -1,0 +1,46 @@
+@import "../../../../styles";
+@import "../../profile/profile.component";
+.main-f{
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+}
+.fa-pencil{
+  cursor: pointer;
+  color: #777777;
+  font-size: 20px;
+}
+
+input{
+  border: none;
+  padding: 8px 10px;
+  background: #ffffff !important;
+  cursor: pointer;
+}
+.active{
+  color: $pinkish-red
+}
+.user-img{
+  position: relative;
+}
+.edit-user-img{
+  position: absolute;
+  top: 110px;
+  left: 62px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 990px) {
+  .first-d{
+ margin: 0 !important;
+}
+
+.animated {
+  padding: 0 !important;
+}
+
+.containerButton{
+  margin-top: 0 !important;
+    padding-bottom: 25px;
+}
+}

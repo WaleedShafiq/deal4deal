@@ -1,0 +1,47 @@
+@import 'layout';
+@import url('https://fonts.googleapis.com/css?family=Cairo&display=swap');
+
+* {
+
+}
+p.title {
+  color: #231F20;
+  line-height: 40px;
+  text-align: justify;
+
+  font-size: 25px;
+
+}
+
+.customborderBottom{
+  border-bottom: 1px dashed #8f9092;
+ }
+
+ .active {
+  // font-weight: bold;
+   color: $redColor;
+   outline: 0;
+  box-shadow: none;
+ }
+.menuLeftSide:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.menuLeftSide {
+  cursor: pointer;
+
+}
+
+@media (max-width: 990px) {
+  .menuLeftSide{
+    display: flex;
+      flex-direction: row;
+      flex-flow: wrap;
+      justify-content: space-between;
+  }
+
+.containerTitle {
+  padding-top:  0 !important;
+}
+}

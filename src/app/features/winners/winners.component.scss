@@ -1,0 +1,94 @@
+@import 'layout';
+#winnersPageCarousel {
+    height: 430px;
+    .cardWinner {
+        max-width: 279px;
+        .firstRowWinners {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            .secondRow {
+                .row {
+                    .containerImage {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        img {
+                            max-width: 55px;
+                            max-height: 55px;
+                        }
+                    }
+                    p.winnerTime {
+                        font-size: 12px;
+                    }
+                }
+            }
+            // .thirdRow {
+            //     span.spanPrizeName{
+            //         color: #515C6F;
+            //     }
+            // }
+            // .forthRow{
+            //     span{
+            //         span.ticketNumLabel{
+            //             color: #231F20;
+            //             font-size: 16px;
+            //         }
+            //         span.ticketNumber{
+            //             color: #EC2326;
+            //         }
+            //     }
+            // }
+            .fiveRow {
+                display: flex;
+                justify-content: center;
+                img {
+                    max-width: 160px;
+                }
+                img.defaultImage {
+                    width: 87px;
+                }
+            }
+        }
+    }
+}
+
+img.prizeImage {
+    width: auto;
+    max-height: 100px;
+}
+
+::ng-deep #winnersPageCarousel .winnerCarousel {
+    direction: ltr;
+}
+
+::ng-deep #winnersPageCarousel .owl-theme .owl-nav {
+    position: relative;
+    bottom: 225px;
+    display: flex;
+    justify-content: space-between;
+}
+
+::ng-deep #winnersPageCarousel .owl-theme .owl-nav .owl-prev,
+::ng-deep #winnersPageCarousel .owl-theme .owl-nav .owl-next {
+    color: $whiteColor;
+    font-size: 15px;
+    padding: 16px 7px 18px 9px;
+    background: $blackColor;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+::ng-deep #winnersPageCarousel .owl-theme .owl-nav .disabled {
+    background: #E2E8ED;
+}
+
+
+@media (max-width: 990px) {
+  ::ng-deep  #winnersPageCarousel .owl-theme .owl-nav {
+    display: none !important;
+}
+}
+
+
+.spanPrizeName {
+  color: #515c6f;
+}

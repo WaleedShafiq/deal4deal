@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 84 84">
+    <defs>
+        <style>
+            .cls-1{fill:#8b9dff}.cls-2{fill:#fff}.cls-3{filter:url(#Ellipse_12)}
+        </style>
+        <filter id="Ellipse_12" width="84" height="84" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="6"/>
+            <feGaussianBlur result="blur" stdDeviation="6"/>
+            <feFlood flood-color="#8f89d6" flood-opacity=".396"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g id="icon" transform="translate(-7 -169)">
+        <g class="cls-3" transform="translate(7 169)">
+            <circle id="Ellipse_12-2" cx="24" cy="24" r="24" class="cls-1" data-name="Ellipse 12" transform="translate(18 12)"/>
+        </g>
+        <g id="_002-order" data-name="002-order" transform="translate(6.963 193.732)">
+            <g id="Group_88" data-name="Group 88" transform="translate(33.062)">
+                <g id="Group_87" data-name="Group 87">
+                    <path id="Path_42" d="M51.534 5.881l-.016-.027a1.007 1.007 0 0 0-.075-.13L48.479.6a1.2 1.2 0 0 0-1.038-.6h-10.2A1.2 1.2 0 0 0 36.2.6l-3.012 5.226a.625.625 0 0 0-.061.146 1.055 1.055 0 0 0-.066.367v13.5a1.47 1.47 0 0 0 1.468 1.468h15.62a1.47 1.47 0 0 0 1.468-1.468V6.291v-.054a.621.621 0 0 0-.083-.356zm-8.548-4.632h4.426l2.332 4.032h-6.758zm-5.717 0h4.468v4.032h-6.793zm13.1 18.59a.22.22 0 0 1-.219.219H34.53a.22.22 0 0 1-.219-.219V6.529h16.058z" class="cls-2" data-name="Path 42" transform="translate(-33.062)"/>
+                </g>
+            </g>
+            <g id="Group_90" data-name="Group 90" transform="translate(39.365 11.055)">
+                <g id="Group_89" data-name="Group 89">
+                    <path id="Path_43" d="M190.322 265.815a.625.625 0 0 0-.883 0l-2.789 2.785-1.072-1.072a.624.624 0 1 0-.883.883l1.514 1.514a.624.624 0 0 0 .883 0l3.23-3.23a.625.625 0 0 0 0-.88z" class="cls-2" data-name="Path 43" transform="translate(-184.512 -265.632)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

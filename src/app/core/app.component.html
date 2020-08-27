@@ -1,0 +1,20 @@
+<div dir="{{'dir'| translate}}"  >
+    <div id="headerNavbar">
+        <app-header [currencyData]="currencyData"></app-header>
+        <app-navbar></app-navbar>
+    </div>
+    <div class="main" >
+        <router-outlet>
+            <notifier-container></notifier-container>
+            <div class="loading" *ngIf="loading">Loading&#8230;</div>
+        </router-outlet>
+    </div>
+      <app-footer-links></app-footer-links>
+      <app-footer></app-footer>
+    <div class="toImproveMobileDesign"></div>
+</div>
+
+<button class="btn text-center rounded-circle"
+(click)="navigateToTop()" id="navigateButton" title="{{'navigateButtonTitle' | translate}}">
+  <i class="fas fa-arrow-up"></i>
+</button>

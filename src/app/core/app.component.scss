@@ -1,0 +1,45 @@
+
+#headerNavbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    transition: all ease .5s;
+}
+
+.sticky {
+    transform: translateY(-3.3rem);
+}
+
+
+#navigateButton {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  background-color: #0ec1f1;
+  cursor: pointer;
+  color: #FFF;
+  display: none;
+}
+
+.showNavigationButton {
+  display: block !important;
+}
+
+#navigateButton:hover {
+  background-color: #dedbdb;
+  color: #0ec1f1;
+}
+// end top button
+
+@media (max-width: 990px) {
+  #headerNavbar {
+   //  margin-bottom: 0px;
+    position: unset;
+}
+.toImproveMobileDesign {
+  height: 59px;
+}
+}

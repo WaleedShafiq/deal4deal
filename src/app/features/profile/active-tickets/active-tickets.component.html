@@ -1,0 +1,30 @@
+<div class="container py-3 mb-5 mt-4 animated fadeIn">
+  <div class="d-flex">
+    <h4><i class="mx-4 fa fa-arrow-left" routerLink="/profile"></i>{{'Active Tickets' | translate}}</h4>
+  </div>
+  <div *ngIf="allTickets" class="col-sm-12 d-flex justify-content-center align-items-center row" >
+    <div  class="col-md-10 col-lg-3 main-f flex-column my-5  mx-3" *ngFor="let ticket of allTickets">
+        <div class="col-sm-12 d-flex justify-content-between p-0 py-3">
+          <div class="d-flex  col-sm-3">
+            <img src="assets/img/Group851.svg" class="l-img">
+          </div>
+          <div class="d-flex  col-sm-6 d-flex justify-content-end">
+            <p class="active"     *ngIf="ticket.is_valid === 'Yes'"></p><span *ngIf="ticket.is_valid === 'Yes'" class="mx-2 pt-1 act">{{'Active' | translate}}</span>
+            <p class="not-active" *ngIf="!ticket.is_valid || ticket.is_valid ==='No'"></p><span *ngIf="!ticket.is_valid || ticket.is_valid ==='No'" class="mx-2 pt-1">{{'Disabled' | translate}}</span>
+          </div>
+        </div>
+      <div class="d-flex justify-content-center align-items-center flex-column">
+          <p class="name my-3">{{'Ticket num' | translate}}: <span class="price">{{ticket.ticket_number}}</span></p>
+        <img class="product-img" src="{{hostUrlImages + ticket.campaign.image}}">
+      </div>
+      <div class="d-flex justify-content-center align-items-center flex-column">
+        <p><span class="offer-txt">{{'Get a chance to' | translate}} </span> <span class="red-custom">{{'win' | translate}}</span> :  <span class="u-name">{{ticket.campaign.prize.name}}</span></p>
+        <p><span class="red-custom">{{ticket.campaign.sold}} </span><span class="ms">{{'SOLD OUT OF' | translate}} </span><span class="rest"> {{ticket.campaign.total_num_of_sells}}</span></p>
+        <p class="average" [ngStyle]="{'width': getWidth(ticket)}"><span class="inner-average"></span></p>
+      </div>
+     </div>
+  </div>
+</div>
+<div *ngIf="!allTickets.length" class="col-sm-12 d-flex justify-content-center align-items-center my-5">
+  <p class="alert alert-warning col-sm-4 text-center">{{'There is no active tickets' | translate}}</p>
+</div>

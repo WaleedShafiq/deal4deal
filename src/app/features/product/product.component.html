@@ -1,0 +1,42 @@
+<notifier-container></notifier-container>
+<div class="container pt-5 mt-5 sectionButtonsFilter">
+  <div class="row">
+    <div class="col-12">
+      <h3>{{'products' | translate}}</h3>
+    </div>
+  </div>
+  <div class="row mt-3  buttonsFilter">
+    <div *ngFor="let buttonName of filterData; let i= index" class="col-auto p-1 my-2">
+      <button  class="text-center btn my-1 "
+      [ngClass]="{'active': ActiveButtonIndex === i}" (click)="filterProducts(buttonName.id, i)">
+      {{buttonName.name | uppercase}}
+    </button>
+    </div>
+
+
+  </div>
+  <div class="row py-3">
+    <div class="col-12">
+      <span>{{filterPrdouctLength}}</span>
+    <span class="text-muted px-1">
+      {{'Campagines' | translate}}
+    </span>
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="productPageCarousel">
+  <block-ui class="blockUI">
+    <owl-carousel-o [options]="customOptions" class="owlCarouselCampagin">
+      <div *ngFor="let d of allRows">
+        <div *ngFor="let p of d.prizes">
+          <ng-template carouselSlide *ngFor="let camp of p.campaigns">
+            <app-card [currencyName]="currencyName" [campagin]="camp"></app-card>
+          </ng-template>
+        </div>
+      </div>
+    </owl-carousel-o>
+  </block-ui>
+</div>
+

@@ -1,0 +1,48 @@
+@import'layout';
+.containerOfPageDetails {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    .shareButtons {
+        font-size: $mediumFont;
+    }
+    .imageAndPriceRow {
+        .sectioncart {
+            .buttonsGroup {
+                display: flex;
+                justify-content: flex-end;
+                .IncreaseButton,
+                .decreaseButton,
+                input[type=number] {
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+        }
+    }
+    img {
+        width: auto;
+        max-width: 250px;
+        height: auto;
+        max-height: 170px;
+    }
+}
+
+// shared socail icon button close
+button.close:focus {
+    box-shadow: none;
+    outline: 0;
+}
+
+// shared socail icon button close
+button.shareButtons:hover {
+    i {
+        animation: .9s customAnimation;
+    }
+}
+.customDarkColor {
+  color: #231f20;
+}
+@media (max-width: 990px) {
+  .customBorderMobile {
+    border: none !important;
+  }
+}

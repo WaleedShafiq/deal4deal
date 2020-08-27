@@ -1,0 +1,141 @@
+<app-home-carousel></app-home-carousel>
+
+<!-- <notifier-container></notifier-container> -->
+
+<div class="container d-block d-md-none d-lg-none" >
+  <div class="row pt-3">
+    <div class="col-12">
+      {{'closingSoon' | translate}}
+    </div>
+  </div>
+  <div class="row" >
+    <div class="container" id="campaginPageCarousel">
+        <owl-carousel-o [options]="customOptionsClosing"  class="owlCarouselClosingCampagin">
+          <ng-template carouselSlide *ngFor="let campagin of ClosingSoonCampagin">
+            <div  class="containerClosing">
+              <div class="p-2 containerImageProduct">
+                <img  [src]="'https://deal4deal.app/deal4deal_backend/public/' + campagin.image" alt="img">
+              </div>
+              <p class="mb-0 text-muted text-center">
+                {{'getAChanceTo' | translate}}
+                <span class="text-danger">
+                  {{'win' | translate}}
+                </span>
+              </p>
+              <p class="text-muted font-weight-bold text-center">{{campagin.prize.name}}</p>
+              <div class="containerOfProgressAndQuantity">
+                <div class="py-2 containerSold">
+                  <p class="soldOutContainer text-center">
+                    <span class="font-weight-bold">{{campagin.sold}}</span>
+                    <span class="text-muted mx-1 font-weight-bold">
+                      {{'SoldOutOf' | translate}}
+                    </span>
+                    <span class="font-weight-bold">{{campagin.total_num_of_sells}}</span>
+                  </p>
+                  <div class="progress mb-2" >
+                    <div [ngStyle]="{'width': ((campagin.sold * 100) / campagin.total_num_of_sells ) + '%'}" class="progress-bar bg-danger closingProgress" *ngIf="campagin.status === 'Closing Soon'"></div>
+                    <div [ngStyle]="{'width': ((campagin.sold * 100) / campagin.total_num_of_sells )  + '%'}" class="progress-bar bg-warning exploreProgress" *ngIf="campagin.status === 'Open'"></div>
+                    <div [ngStyle]="{'width':  100 + '%'}"  class="progress-bar bg-muted soldProgress" *ngIf="campagin.status === 'sold out'"></div>
+                  </div>
+                </div>
+            </div>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+    </div>
+
+  </div>
+</div>
+
+<div class="container d-block d-md-none d-lg-none" >
+  <div class="row pt-3">
+    <div class="col-12">
+      <img src="assets/img/winners.webp" alt="img" class="img-fluid winner" [routerLink]="['/winner']">
+    </div>
+  </div>
+</div>
+
+<div class="container sectionButtonsFilter d-block d-md-none d-lg-none">
+  <div class="row pt-4">
+    <div class="col-12">
+      <p class="mb-0">{{'CampaginesMobile' | translate}}</p>
+    </div>
+  </div>
+  <!-- <div class="row mt-3 align-items-center buttonsFilter biitonsFilterMobile">
+    <div class="col-auto">
+      <button class="text-center btn" (click)="gitAllCompagin()"
+      [ngClass]="{'active': ActiveButtonIndex === 1}">
+      {{'All' | translate}}
+    </button>
+    </div>
+    <div class="col-auto">
+      <button class="text-center btn " [ngClass]="{'active': ActiveButtonIndex === 2}"
+      (click)="filterCompagin(2, 'Closing soon')">
+      {{'ClosingSoon' | translate}}
+    </button>
+    </div>
+    <div class="col-auto">
+      <button class="text-center btn" [ngClass]="{'active': ActiveButtonIndex === 3}"
+      (click)="filterCompagin(3, 'Open')">
+      {{'Open' | translate}}
+    </button>
+    </div>
+    <div class="col-auto">
+      <button class="text-center btn" [ngClass]="{'active': ActiveButtonIndex === 4}"
+      (click)="filterCompagin(4 , 'Sold out')">
+      {{'SoldOut' | translate}}
+    </button>
+    </div>
+  </div> -->
+</div>
+
+<div class="container pt-5 sectionButtonsFilter">
+  <div class="row">
+      <h3>{{'Campagines' | translate}}</h3>
+  </div>
+  <div class="row mt-3 align-items-center buttonsFilter">
+    <div class="col-auto  my-2">
+      <button class="text-center btn" (click)="gitAllCompagin()"
+      [ngClass]="{'active': ActiveButtonIndex === 1}">
+      {{'All' | translate}}
+    </button>
+    </div>
+
+    <div class="col-auto my-2">
+      <button class="text-center btn " [ngClass]="{'active': ActiveButtonIndex === 2}"
+      (click)="filterCompagin(2, 'Closing soon')">
+      {{'ClosingSoon' | translate}}
+    </button>
+    </div>
+    <div class="col-auto my-2">
+      <button class="text-center btn" [ngClass]="{'active': ActiveButtonIndex === 3}"
+      (click)="filterCompagin(3, 'Open')">
+      {{'Open' | translate}}
+    </button>
+    </div>
+    <div class="col-auto my-2">
+      <button class="text-center btn" [ngClass]="{'active': ActiveButtonIndex === 4}"
+      (click)="filterCompagin(4 , 'Sold out')">
+      {{'SoldOut' | translate}}
+    </button>
+    </div>
+  </div>
+  <div class="row pt-3 pb-1 mobileDesignLenghtCampagin">
+     {{allRows?.length}}
+    <span class="text-muted px-1">
+
+      {{'Campagines' | translate}}
+    </span>
+  </div>
+</div>
+
+<div class="container" id="campaginPageCarousel">
+  <block-ui class="blockUI">
+    <owl-carousel-o [options]="customOptions"  class="owlCarouselCampagin">
+      <ng-template carouselSlide *ngFor="let camp of allRows">
+        <app-card [currencyName]="currencyName" [campagin]="camp"></app-card>
+      </ng-template>
+    </owl-carousel-o>
+  </block-ui>
+</div>
+

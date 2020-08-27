@@ -1,0 +1,63 @@
+$grayColor: #777777;
+$redColor: #EC2326;
+$customDarkColor: #231F20;
+$whiteColor: #FFF;
+$blackColor: #000;
+$customGrayColor: #e2e8ed;
+$yellowColor: #FCC113;
+$darkColor: #231F20;
+$orangeColor: #070707;
+$violetColor: #665EFF;
+$headerDetailsColor: #F6F5F1;
+$customLightGray :#f6f5f16e;
+.bg-muted {
+  background-color: $grayColor!important;
+}
+.bg-danger {
+  background-color: $redColor !important;
+  color: $whiteColor;
+}
+.text-muted {
+  color: $grayColor !important;
+}
+.text-danger {
+  color: $redColor !important;
+}
+.bg-gray {
+  background-color: $customGrayColor;
+}
+.bg-customLightGray{
+  background-color: $customLightGray;
+}
+.bg-customDark {
+  background-color: $darkColor;
+  opacity: 0.45;
+}
+
+.bg-customGray {
+  background-color: $customGrayColor;
+}
+
+
+.text-dark {
+  color: $blackColor !important;
+}
+
+@keyframes customAnimation
+{
+  15%
+  {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  30%
+  {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  50%
+  {
+    -webkit-transform: translateX(3px);
+    transform: translateX(3px);
+  }
+}

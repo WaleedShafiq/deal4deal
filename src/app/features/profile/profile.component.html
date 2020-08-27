@@ -1,0 +1,190 @@
+<notifier-container></notifier-container>
+<div class="container-fluid animated fadeIn">
+  <div class="row flex-column p-5 align-items-center my-5 topRow">
+<!--      <div class="col-sm-12 d-flex align-items-center flex-column p-5">-->
+        <div class="first-d col-sm-8">
+          <div class="user-img d-flex justify-content-center align-items-center p-4">
+            <img *ngIf="userData.image" class="profile-img" src="{{hostUrlImages}}{{userData.image}}">
+            <img *ngIf="!userData.image" class="profile-img" src="{{defaultUserImage}}">
+          </div>
+          <div class="d-flex justify-content-center align-items-center flex-column">
+              <h2>{{userData.first_name | titlecase}}
+                <span *ngIf="userData.last_name != null">
+                  {{userData.last_name | titlecase}}
+                </span>
+              </h2>
+              <p class="user-email">{{userData.email}}</p>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <img class="cup m-3"  src="assets/img/Group1827.svg">
+            <p class="silver pt-2">{{userLevel | titlecase}}</p>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+              <p class="divider"></p>
+          </div>
+          <div class="d-flex justify-content-center align-items-center col-sm-12">
+              <p class="t-1 text-center"><span class="pr-1 r-s">{{userData.purchase_points + userData.referal_points}}</span> {{'Points earned' | translate}}</p>
+              <p class="t-2 text-left" [ngClass]="{'pl-5' : currentLanguage === 'en', 'pr-5' : currentLanguage === 'ar' }">{{'nextLevel' | translate}} @ <span class="r-s"> {{userData.level.limit_points}} </span> {{'points' | translate}}</p>
+          </div>
+          <div class="d-flex justify-content-center align-items-center col-sm-12">
+              <p class="earn">{{'earn' | translate}} <span class="pr-1 r-s">10 {{'dreamPoints' | translate}}</span> {{'onEvery' | translate}} <span class="r-s">10 USD</span> {{'spend' | translate}} </p>
+          </div>
+        </div>
+        <div class="second-d col-sm-12 d-flex p-0 row justify-content-center col mt-5">
+                <div class="second-l my-2 col-md-5 p-3  col-sm-12 d-flex mx-1 flex-column">
+                    <div class="d-flex justify-content-between align-items-center py-3">
+                      <div class="col-sm-2 col-auto">
+                          <i class="fa fa-user-o icon-l"></i>
+                      </div>
+                      <div class="col-sm-8 col-auto">
+                        <p class="label-t">{{'Personal Profile' | translate}}</p>
+                      </div>
+                      <div class="col-sm-2 col-auto text-right">
+                          <i class="fa fa-chevron-{{ currentLanguage === 'en'  ?  'right' : 'left'}}" routerLink="/profile/personal-profile"></i>
+                      </div>
+                    </div>
+                  <div class="d-flex justify-content-between py-3">
+                    <div class="col-sm-2 col-auto">
+                      <i class="fa fa-heart-o icon-l"></i>
+                    </div>
+                    <div class="col-sm-8 col-auto">
+                      <p class="label-t">{{'Wishlist' | translate}}</p>
+                    </div>
+                    <div class="col-sm-2 col-auto text-right">
+                      <i class="fa fa-chevron-{{ currentLanguage === 'en'  ?  'right' : 'left'}}" routerLink="/whishlist"></i>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between py-3">
+                    <div class="col-sm-2 col-auto">
+                      <i class="fa fa-ticket icon-l"></i>
+                    </div>
+                    <div class="col-sm-8 col-auto">
+                      <p class="label-t">{{'Active Tickets' | translate}}</p>
+                    </div>
+                    <div class="col-sm-2 col-auto text-right">
+                      <i class="fa fa-chevron-{{ currentLanguage === 'en'  ?  'right' : 'left'}}" routerLink="/profile/active-tickets"></i>
+                    </div>
+                  </div>
+                  <div class="d-flex  justify-content-between py-3">
+                    <div class="col-sm-2 col-auto">
+                      <i class="fa fa-shopping-bag icon-l"></i>
+                    </div>
+                    <div class="col-sm-8 col-auto">
+                      <p class="label-t">{{'Finished Orders' | translate}}</p>
+                    </div>
+                    <div class="col-sm-2 col-auto text-right">
+                      <i class="fa fa-chevron-{{ currentLanguage === 'en'  ?  'right' : 'left'}}" routerLink="/profile/finished-orders"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="second-r my-2 mx-1 p-3 col-md-5 col-sm-12">
+                  <div class="d-flex justify-content-between py-3">
+                    <div class="col-sm-2 col-auto">
+                      <i class="fa fa-inbox icon-l"></i>
+                    </div>
+                    <div class="col-sm-8 col-auto">
+                      <p class="label-t">{{'Invite Friends' | translate}}</p>
+                    </div>
+                    <div class="col-sm-2 col-auto text-right">
+                      <i class="fa fa-chevron-{{ currentLanguage === 'en'  ?  'right' : 'left'}}" routerLink="/profile/invite-friends"></i>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between py-3">
+                    <div class="col-sm-2 col-auto">
+                      <i class="fa fa-flag-o icon-l"></i>
+                    </div>
+                    <div class="col-sm-8 col-auto">
+                      <p class="label-t">{{'Levels' | translate}}</p>
+                    </div>
+                    <div class="col-sm-2 col-auto text-right">
+                      <i class="fa fa-chevron-{{ currentLanguage === 'en'  ?  'right' : 'left'}}"  routerLink="/profile/levels"></i>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between py-3">
+                    <div class="col-sm-2 col-auto">
+                      <i class="fa fa-star-o icon-l"></i>
+                    </div>
+                    <div class="col-sm-8 col-auto">
+                      <p class="label-t">{{'Rate our App' | translate}}</p>
+                    </div>
+                    <div class="col-sm-2 col-auto text-right">
+                      <i class="fa fa-chevron-{{ currentLanguage === 'en'  ?  'right' : 'left'}}"  routerLink="/profile/rate-our-website/{{userData.rate || 0}}"></i>
+                    </div>
+                  </div>
+                  <div class="d-flex  justify-content-between py-3">
+                    <div class="col-sm-2 col-auto">
+                      <i class="fa fa-flag-checkered icon-l"></i>
+                    </div>
+                    <div class="col-sm-8 col-auto">
+                      <p class="label-t">{{'Dream Points' | translate}}</p>
+                    </div>
+                    <div class="col-sm-2 col-auto text-right">
+                      <i class="fa fa-chevron-{{ currentLanguage === 'en'  ?  'right' : 'left'}}" (click)="setData()"></i>
+                    </div>
+                  </div>
+                </div>
+        </div>
+        <div *ngIf="!finishedOrders" class="third-d row d-flex col-sm-12 p-0 justify-content-center col mt-2">
+          <div class="second-l col-sm-12 col-md-5 p-3 my-2 mx-1 d-flex flex-column">
+            <div class="d-flex justify-content-between py-3">
+              <div class="col-sm-2 col-auto ">
+                <i class="fa fa-lock icon-l"></i>
+              </div>
+              <div class="col-sm-8 col-auto">
+                <p class="label-t">{{'Change Password' | translate}}</p>
+              </div>
+              <div class="col-sm-2 col-auto text-right">
+                <i class="fa fa-chevron-{{ currentLanguage === 'en'  ?  'right' : 'left'}}" routerLink="/profile/change-password"></i>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between py-3">
+              <div class="col-sm-2 col-auto">
+                <i class="fa fa-money icon-l"></i>
+              </div>
+              <div class="col-sm-8 col-auto">
+                <p class="label-t" >{{'Currency' | translate}}</p>
+              </div>
+              <div class="col-sm-2 col-auto text-right">
+                <i routerLink="/profile/user-curreny" class="fa fa-chevron-{{ currentLanguage === 'en'  ?  'right' : 'left'}}"></i>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between py-3">
+              <div class="col-sm-2 col-auto">
+                <i class="fa fa-language icon-l"></i>
+              </div>
+              <div class="col-sm-8 col-auto">
+                <p class="label-t" >{{'Language' | translate}}</p>
+              </div>
+              <div class="col-sm-2 col-auto text-right">
+                <i routerLink="/profile/user-language" class="fa fa-chevron-{{ currentLanguage === 'en'  ?  'right' : 'left'}}"></i>
+              </div>
+            </div>
+          </div>
+          <div class="second-r col-md-5 col-sm-12 p-3 my-2 mx-1">
+            <div class="d-flex justify-content-between py-3">
+              <div class="col-sm-2 col-auto">
+                <i class="fa fa-hand-scissors-o icon-l"></i>
+              </div>
+              <div class="col-sm-8 col-auto">
+                <p class="label-t">{{'Charities' | translate}}</p>
+              </div>
+              <div class="col-sm-2 col-auto text-right">
+                <i class="fa fa-chevron-{{ currentLanguage === 'en'  ?  'right' : 'left'}}" routerLink="/charity"></i>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between py-3">
+              <div class="col-sm-2 col-auto">
+                <i class="fa fa-power-off icon-l"></i>
+              </div>
+              <div class="col-sm-8 col-auto">
+                <p class="label-t log-out">{{'Log out' | translate}}</p>
+              </div>
+              <div class="col-sm-2 col-auto text-right">
+                <i class="fa fa-chevron-{{ currentLanguage === 'en'  ?  'right' : 'left'}}" (click)="logOut()"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+<!--      </div>-->
+  </div>
+</div>

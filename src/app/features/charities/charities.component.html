@@ -1,0 +1,38 @@
+
+<div dir="{{'dir'| translate}}" >
+  <div class="container pt-5">
+    <div class="row">
+      <div class="col-12">
+        <p class="font-weight-bold mainTitleCharitiesPage">{{'charitiesWeSupport' | translate}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container" *ngFor="let ch of allRows">
+    <div class="row">
+      <div class="col-12">
+        <div class="backgroundImage"
+          [ngStyle]="{'background-image': 'url(' + baseURL + ch.image + ')'}">
+          <h1 class="font-weight-bold text-light m-0 px-5 py-3">{{ch.name}}</h1>
+          <p class="mx-5 text-light mb-0">{{ch.desc | slice:0:80}}</p>
+          <div class="px-5 containerButton">
+            <button class="btn-lg btn btn-danger px-5" (click)="readMoreDataCgarities()">
+              <span *ngIf="!readMore">{{'more' | translate}}</span>
+              <span *ngIf="readMore">{{'less' | translate}}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" [hidden]="!readMore">
+      <div class="mt-5 container">
+        <div class="row">
+          <div class="col-12 description my-3">
+            {{ch.desc}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
